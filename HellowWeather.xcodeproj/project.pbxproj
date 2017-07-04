@@ -1,0 +1,1208 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2398D4EB1F073ED900D7437C /* HLBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2398D4EA1F073ED900D7437C /* HLBottomView.m */; };
+		2398D4EE1F073F0500D7437C /* HLBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2398D4ED1F073F0500D7437C /* HLBottomViewController.m */; };
+		23D0107E1F062398004A2601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D0107C1F062398004A2601 /* Main.storyboard */; };
+		23D010811F062398004A2601 /* HellowWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23D0107F1F062398004A2601 /* HellowWeather.xcdatamodeld */; };
+		23D010831F062398004A2601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23D010821F062398004A2601 /* Assets.xcassets */; };
+		23D010861F062398004A2601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D010841F062398004A2601 /* LaunchScreen.storyboard */; };
+		23D010911F062398004A2601 /* HellowWeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D010901F062398004A2601 /* HellowWeatherTests.m */; };
+		23D0109C1F062398004A2601 /* HellowWeatherUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D0109B1F062398004A2601 /* HellowWeatherUITests.m */; };
+		23D010B11F062470004A2601 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D010AC1F062470004A2601 /* AppDelegate.m */; };
+		23D010B21F062470004A2601 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23D010AF1F062470004A2601 /* Info.plist */; };
+		23D010B31F062470004A2601 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D010B01F062470004A2601 /* main.m */; };
+		23D010BA1F0627A9004A2601 /* HLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D010B91F0627A9004A2601 /* HLHomeViewController.m */; };
+		23D010C01F0631E9004A2601 /* HLNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D010BF1F0631E9004A2601 /* HLNetTool.m */; };
+		23D010C41F063341004A2601 /* HLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D010C31F063341004A2601 /* HLConst.m */; };
+		23D010C81F063845004A2601 /* HLTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D010C71F063845004A2601 /* HLTopView.m */; };
+		23D010CB1F06429B004A2601 /* HLWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D010CA1F06429B004A2601 /* HLWeatherModel.m */; };
+		23D010CD1F06455A004A2601 /* HLTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D010CC1F06455A004A2601 /* HLTopView.xib */; };
+		23D14B071F09DDD600C22F8F /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B061F09DDD600C22F8F /* UINavigationBar+Awesome.m */; };
+		23D14B0B1F09E27A00C22F8F /* HLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B0A1F09E27A00C22F8F /* HLNavigationController.m */; };
+		23D14B0E1F09ECA600C22F8F /* UIView+JYDFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B0D1F09ECA600C22F8F /* UIView+JYDFrame.m */; };
+		23D14B111F09ECB100C22F8F /* NSDate+DateExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B101F09ECB100C22F8F /* NSDate+DateExtension.m */; };
+		23D14B181F0A2BD500C22F8F /* HLAirDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B171F0A2BD500C22F8F /* HLAirDetailsController.m */; };
+		23D14B6C1F0A382900C22F8F /* NSNumber+Zirkfied.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B1C1F0A382800C22F8F /* NSNumber+Zirkfied.m */; };
+		23D14B6D1F0A382900C22F8F /* NSString+Zirkfied.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B1E1F0A382800C22F8F /* NSString+Zirkfied.m */; };
+		23D14B6E1F0A382900C22F8F /* UIBezierPath+Zirkfied.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B201F0A382800C22F8F /* UIBezierPath+Zirkfied.m */; };
+		23D14B6F1F0A382900C22F8F /* UIColor+Zirkfied.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B221F0A382800C22F8F /* UIColor+Zirkfied.m */; };
+		23D14B701F0A382900C22F8F /* UIView+Zirkfied.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B241F0A382800C22F8F /* UIView+Zirkfied.m */; };
+		23D14B711F0A382900C22F8F /* ZFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B271F0A382800C22F8F /* ZFLabel.m */; };
+		23D14B721F0A382900C22F8F /* ZFPopoverLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B291F0A382800C22F8F /* ZFPopoverLabel.m */; };
+		23D14B731F0A382900C22F8F /* ZFXAxisLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B2B1F0A382800C22F8F /* ZFXAxisLine.m */; };
+		23D14B741F0A382900C22F8F /* ZFYAxisLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B2D1F0A382800C22F8F /* ZFYAxisLine.m */; };
+		23D14B751F0A382900C22F8F /* ZFCurveAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B301F0A382800C22F8F /* ZFCurveAttribute.m */; };
+		23D14B761F0A382900C22F8F /* ZFGradientAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B321F0A382800C22F8F /* ZFGradientAttribute.m */; };
+		23D14B771F0A382900C22F8F /* ZFConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B371F0A382800C22F8F /* ZFConst.m */; };
+		23D14B781F0A382900C22F8F /* ZFMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B391F0A382800C22F8F /* ZFMethod.m */; };
+		23D14B791F0A382900C22F8F /* ZFBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B3C1F0A382800C22F8F /* ZFBar.m */; };
+		23D14B7A1F0A382900C22F8F /* ZFBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B3E1F0A382800C22F8F /* ZFBarChart.m */; };
+		23D14B7B1F0A382900C22F8F /* ZFCirque.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B411F0A382800C22F8F /* ZFCirque.m */; };
+		23D14B7C1F0A382900C22F8F /* ZFCirqueChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B431F0A382800C22F8F /* ZFCirqueChart.m */; };
+		23D14B7D1F0A382900C22F8F /* ZFGenericAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B461F0A382800C22F8F /* ZFGenericAxis.m */; };
+		23D14B7E1F0A382900C22F8F /* ZFGenericChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B491F0A382800C22F8F /* ZFGenericChart.m */; };
+		23D14B7F1F0A382900C22F8F /* ZFHorizontalAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B4C1F0A382800C22F8F /* ZFHorizontalAxis.m */; };
+		23D14B801F0A382900C22F8F /* ZFHorizontalBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B4F1F0A382800C22F8F /* ZFHorizontalBar.m */; };
+		23D14B811F0A382900C22F8F /* ZFHorizontalBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B511F0A382800C22F8F /* ZFHorizontalBarChart.m */; };
+		23D14B821F0A382900C22F8F /* ZFCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B541F0A382800C22F8F /* ZFCircle.m */; };
+		23D14B831F0A382900C22F8F /* ZFLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B561F0A382800C22F8F /* ZFLine.m */; };
+		23D14B841F0A382900C22F8F /* ZFLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B581F0A382800C22F8F /* ZFLineChart.m */; };
+		23D14B851F0A382900C22F8F /* ZFPie.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B5B1F0A382800C22F8F /* ZFPie.m */; };
+		23D14B861F0A382900C22F8F /* ZFPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B5D1F0A382800C22F8F /* ZFPieChart.m */; };
+		23D14B871F0A382900C22F8F /* ZFTranslucencePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B5F1F0A382800C22F8F /* ZFTranslucencePath.m */; };
+		23D14B881F0A382900C22F8F /* ZFPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B621F0A382900C22F8F /* ZFPolygon.m */; };
+		23D14B891F0A382900C22F8F /* ZFRadar.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B641F0A382900C22F8F /* ZFRadar.m */; };
+		23D14B8A1F0A382900C22F8F /* ZFRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B661F0A382900C22F8F /* ZFRadarChart.m */; };
+		23D14B8B1F0A382900C22F8F /* ZFWave.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B691F0A382900C22F8F /* ZFWave.m */; };
+		23D14B8C1F0A382900C22F8F /* ZFWaveChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B6B1F0A382900C22F8F /* ZFWaveChart.m */; };
+		23D14B8F1F0A38D500C22F8F /* HLAirTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B8E1F0A38D500C22F8F /* HLAirTopView.m */; };
+		23D14B921F0A3F7000C22F8F /* HLAirModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B911F0A3F7000C22F8F /* HLAirModel.m */; };
+		ED4257992E9DAB34E62C60BF /* libPods-HellowWeather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F2DE5D33FA81EE51283BD2 /* libPods-HellowWeather.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23D0108D1F062398004A2601 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23D010681F062398004A2601 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23D0106F1F062398004A2601;
+			remoteInfo = HellowWeather;
+		};
+		23D010981F062398004A2601 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23D010681F062398004A2601 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23D0106F1F062398004A2601;
+			remoteInfo = HellowWeather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2398D4E91F073ED900D7437C /* HLBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLBottomView.h; sourceTree = "<group>"; };
+		2398D4EA1F073ED900D7437C /* HLBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLBottomView.m; sourceTree = "<group>"; };
+		2398D4EC1F073F0500D7437C /* HLBottomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLBottomViewController.h; sourceTree = "<group>"; };
+		2398D4ED1F073F0500D7437C /* HLBottomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLBottomViewController.m; sourceTree = "<group>"; };
+		23D010701F062398004A2601 /* HellowWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HellowWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23D0107D1F062398004A2601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		23D010801F062398004A2601 /* HellowWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HellowWeather.xcdatamodel; sourceTree = "<group>"; };
+		23D010821F062398004A2601 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		23D010851F062398004A2601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		23D0108C1F062398004A2601 /* HellowWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HellowWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23D010901F062398004A2601 /* HellowWeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HellowWeatherTests.m; sourceTree = "<group>"; };
+		23D010921F062398004A2601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23D010971F062398004A2601 /* HellowWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HellowWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23D0109B1F062398004A2601 /* HellowWeatherUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HellowWeatherUITests.m; sourceTree = "<group>"; };
+		23D0109D1F062398004A2601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23D010AB1F062470004A2601 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		23D010AC1F062470004A2601 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		23D010AF1F062470004A2601 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23D010B01F062470004A2601 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		23D010B81F0627A9004A2601 /* HLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLHomeViewController.h; sourceTree = "<group>"; };
+		23D010B91F0627A9004A2601 /* HLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLHomeViewController.m; sourceTree = "<group>"; };
+		23D010BB1F062FD3004A2601 /* HLPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLPrefixHeader.pch; sourceTree = "<group>"; };
+		23D010BE1F0631E9004A2601 /* HLNetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLNetTool.h; sourceTree = "<group>"; };
+		23D010BF1F0631E9004A2601 /* HLNetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLNetTool.m; sourceTree = "<group>"; };
+		23D010C21F063341004A2601 /* HLConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLConst.h; sourceTree = "<group>"; };
+		23D010C31F063341004A2601 /* HLConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLConst.m; sourceTree = "<group>"; };
+		23D010C61F063845004A2601 /* HLTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLTopView.h; sourceTree = "<group>"; };
+		23D010C71F063845004A2601 /* HLTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLTopView.m; sourceTree = "<group>"; };
+		23D010C91F06429B004A2601 /* HLWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLWeatherModel.h; sourceTree = "<group>"; };
+		23D010CA1F06429B004A2601 /* HLWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLWeatherModel.m; sourceTree = "<group>"; };
+		23D010CC1F06455A004A2601 /* HLTopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLTopView.xib; sourceTree = "<group>"; };
+		23D14B051F09DDD600C22F8F /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		23D14B061F09DDD600C22F8F /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		23D14B091F09E27A00C22F8F /* HLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLNavigationController.h; sourceTree = "<group>"; };
+		23D14B0A1F09E27A00C22F8F /* HLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLNavigationController.m; sourceTree = "<group>"; };
+		23D14B0C1F09ECA600C22F8F /* UIView+JYDFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JYDFrame.h"; sourceTree = "<group>"; };
+		23D14B0D1F09ECA600C22F8F /* UIView+JYDFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JYDFrame.m"; sourceTree = "<group>"; };
+		23D14B0F1F09ECB100C22F8F /* NSDate+DateExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateExtension.h"; sourceTree = "<group>"; };
+		23D14B101F09ECB100C22F8F /* NSDate+DateExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateExtension.m"; sourceTree = "<group>"; };
+		23D14B161F0A2BD500C22F8F /* HLAirDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLAirDetailsController.h; sourceTree = "<group>"; };
+		23D14B171F0A2BD500C22F8F /* HLAirDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAirDetailsController.m; sourceTree = "<group>"; };
+		23D14B1B1F0A382800C22F8F /* NSNumber+Zirkfied.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Zirkfied.h"; sourceTree = "<group>"; };
+		23D14B1C1F0A382800C22F8F /* NSNumber+Zirkfied.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Zirkfied.m"; sourceTree = "<group>"; };
+		23D14B1D1F0A382800C22F8F /* NSString+Zirkfied.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Zirkfied.h"; sourceTree = "<group>"; };
+		23D14B1E1F0A382800C22F8F /* NSString+Zirkfied.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Zirkfied.m"; sourceTree = "<group>"; };
+		23D14B1F1F0A382800C22F8F /* UIBezierPath+Zirkfied.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+Zirkfied.h"; sourceTree = "<group>"; };
+		23D14B201F0A382800C22F8F /* UIBezierPath+Zirkfied.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+Zirkfied.m"; sourceTree = "<group>"; };
+		23D14B211F0A382800C22F8F /* UIColor+Zirkfied.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Zirkfied.h"; sourceTree = "<group>"; };
+		23D14B221F0A382800C22F8F /* UIColor+Zirkfied.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Zirkfied.m"; sourceTree = "<group>"; };
+		23D14B231F0A382800C22F8F /* UIView+Zirkfied.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Zirkfied.h"; sourceTree = "<group>"; };
+		23D14B241F0A382800C22F8F /* UIView+Zirkfied.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Zirkfied.m"; sourceTree = "<group>"; };
+		23D14B261F0A382800C22F8F /* ZFLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLabel.h; sourceTree = "<group>"; };
+		23D14B271F0A382800C22F8F /* ZFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLabel.m; sourceTree = "<group>"; };
+		23D14B281F0A382800C22F8F /* ZFPopoverLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPopoverLabel.h; sourceTree = "<group>"; };
+		23D14B291F0A382800C22F8F /* ZFPopoverLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPopoverLabel.m; sourceTree = "<group>"; };
+		23D14B2A1F0A382800C22F8F /* ZFXAxisLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFXAxisLine.h; sourceTree = "<group>"; };
+		23D14B2B1F0A382800C22F8F /* ZFXAxisLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFXAxisLine.m; sourceTree = "<group>"; };
+		23D14B2C1F0A382800C22F8F /* ZFYAxisLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFYAxisLine.h; sourceTree = "<group>"; };
+		23D14B2D1F0A382800C22F8F /* ZFYAxisLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFYAxisLine.m; sourceTree = "<group>"; };
+		23D14B2F1F0A382800C22F8F /* ZFCurveAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCurveAttribute.h; sourceTree = "<group>"; };
+		23D14B301F0A382800C22F8F /* ZFCurveAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCurveAttribute.m; sourceTree = "<group>"; };
+		23D14B311F0A382800C22F8F /* ZFGradientAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFGradientAttribute.h; sourceTree = "<group>"; };
+		23D14B321F0A382800C22F8F /* ZFGradientAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFGradientAttribute.m; sourceTree = "<group>"; };
+		23D14B341F0A382800C22F8F /* ZFChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFChart.h; sourceTree = "<group>"; };
+		23D14B351F0A382800C22F8F /* ZFColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFColor.h; sourceTree = "<group>"; };
+		23D14B361F0A382800C22F8F /* ZFConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFConst.h; sourceTree = "<group>"; };
+		23D14B371F0A382800C22F8F /* ZFConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFConst.m; sourceTree = "<group>"; };
+		23D14B381F0A382800C22F8F /* ZFMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFMethod.h; sourceTree = "<group>"; };
+		23D14B391F0A382800C22F8F /* ZFMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFMethod.m; sourceTree = "<group>"; };
+		23D14B3B1F0A382800C22F8F /* ZFBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBar.h; sourceTree = "<group>"; };
+		23D14B3C1F0A382800C22F8F /* ZFBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBar.m; sourceTree = "<group>"; };
+		23D14B3D1F0A382800C22F8F /* ZFBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBarChart.h; sourceTree = "<group>"; };
+		23D14B3E1F0A382800C22F8F /* ZFBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBarChart.m; sourceTree = "<group>"; };
+		23D14B401F0A382800C22F8F /* ZFCirque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCirque.h; sourceTree = "<group>"; };
+		23D14B411F0A382800C22F8F /* ZFCirque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCirque.m; sourceTree = "<group>"; };
+		23D14B421F0A382800C22F8F /* ZFCirqueChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCirqueChart.h; sourceTree = "<group>"; };
+		23D14B431F0A382800C22F8F /* ZFCirqueChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCirqueChart.m; sourceTree = "<group>"; };
+		23D14B451F0A382800C22F8F /* ZFGenericAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFGenericAxis.h; sourceTree = "<group>"; };
+		23D14B461F0A382800C22F8F /* ZFGenericAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFGenericAxis.m; sourceTree = "<group>"; };
+		23D14B481F0A382800C22F8F /* ZFGenericChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFGenericChart.h; sourceTree = "<group>"; };
+		23D14B491F0A382800C22F8F /* ZFGenericChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFGenericChart.m; sourceTree = "<group>"; };
+		23D14B4B1F0A382800C22F8F /* ZFHorizontalAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFHorizontalAxis.h; sourceTree = "<group>"; };
+		23D14B4C1F0A382800C22F8F /* ZFHorizontalAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFHorizontalAxis.m; sourceTree = "<group>"; };
+		23D14B4E1F0A382800C22F8F /* ZFHorizontalBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFHorizontalBar.h; sourceTree = "<group>"; };
+		23D14B4F1F0A382800C22F8F /* ZFHorizontalBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFHorizontalBar.m; sourceTree = "<group>"; };
+		23D14B501F0A382800C22F8F /* ZFHorizontalBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFHorizontalBarChart.h; sourceTree = "<group>"; };
+		23D14B511F0A382800C22F8F /* ZFHorizontalBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFHorizontalBarChart.m; sourceTree = "<group>"; };
+		23D14B531F0A382800C22F8F /* ZFCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCircle.h; sourceTree = "<group>"; };
+		23D14B541F0A382800C22F8F /* ZFCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFCircle.m; sourceTree = "<group>"; };
+		23D14B551F0A382800C22F8F /* ZFLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLine.h; sourceTree = "<group>"; };
+		23D14B561F0A382800C22F8F /* ZFLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLine.m; sourceTree = "<group>"; };
+		23D14B571F0A382800C22F8F /* ZFLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLineChart.h; sourceTree = "<group>"; };
+		23D14B581F0A382800C22F8F /* ZFLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLineChart.m; sourceTree = "<group>"; };
+		23D14B5A1F0A382800C22F8F /* ZFPie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPie.h; sourceTree = "<group>"; };
+		23D14B5B1F0A382800C22F8F /* ZFPie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPie.m; sourceTree = "<group>"; };
+		23D14B5C1F0A382800C22F8F /* ZFPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPieChart.h; sourceTree = "<group>"; };
+		23D14B5D1F0A382800C22F8F /* ZFPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPieChart.m; sourceTree = "<group>"; };
+		23D14B5E1F0A382800C22F8F /* ZFTranslucencePath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTranslucencePath.h; sourceTree = "<group>"; };
+		23D14B5F1F0A382800C22F8F /* ZFTranslucencePath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTranslucencePath.m; sourceTree = "<group>"; };
+		23D14B611F0A382800C22F8F /* ZFPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPolygon.h; sourceTree = "<group>"; };
+		23D14B621F0A382900C22F8F /* ZFPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPolygon.m; sourceTree = "<group>"; };
+		23D14B631F0A382900C22F8F /* ZFRadar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFRadar.h; sourceTree = "<group>"; };
+		23D14B641F0A382900C22F8F /* ZFRadar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFRadar.m; sourceTree = "<group>"; };
+		23D14B651F0A382900C22F8F /* ZFRadarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFRadarChart.h; sourceTree = "<group>"; };
+		23D14B661F0A382900C22F8F /* ZFRadarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFRadarChart.m; sourceTree = "<group>"; };
+		23D14B681F0A382900C22F8F /* ZFWave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFWave.h; sourceTree = "<group>"; };
+		23D14B691F0A382900C22F8F /* ZFWave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFWave.m; sourceTree = "<group>"; };
+		23D14B6A1F0A382900C22F8F /* ZFWaveChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFWaveChart.h; sourceTree = "<group>"; };
+		23D14B6B1F0A382900C22F8F /* ZFWaveChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFWaveChart.m; sourceTree = "<group>"; };
+		23D14B8D1F0A38D500C22F8F /* HLAirTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLAirTopView.h; sourceTree = "<group>"; };
+		23D14B8E1F0A38D500C22F8F /* HLAirTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAirTopView.m; sourceTree = "<group>"; };
+		23D14B901F0A3F7000C22F8F /* HLAirModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLAirModel.h; sourceTree = "<group>"; };
+		23D14B911F0A3F7000C22F8F /* HLAirModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAirModel.m; sourceTree = "<group>"; };
+		87F2DE5D33FA81EE51283BD2 /* libPods-HellowWeather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HellowWeather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9075F4E20991CD80EA66CFCC /* Pods-HellowWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HellowWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HellowWeather/Pods-HellowWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		96FF74B50F84F2940ED27F4B /* Pods-HellowWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HellowWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-HellowWeather/Pods-HellowWeather.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23D0106D1F062398004A2601 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED4257992E9DAB34E62C60BF /* libPods-HellowWeather.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D010891F062398004A2601 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D010941F062398004A2601 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2398D4E81F073EB600D7437C /* BottomView */ = {
+			isa = PBXGroup;
+			children = (
+				2398D4E91F073ED900D7437C /* HLBottomView.h */,
+				2398D4EA1F073ED900D7437C /* HLBottomView.m */,
+			);
+			path = BottomView;
+			sourceTree = "<group>";
+		};
+		2398D4EF1F078C4000D7437C /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B191F0A382800C22F8F /* ZFChart */,
+			);
+			name = Vender;
+			path = Project/Vender;
+			sourceTree = "<group>";
+		};
+		23D010671F062398004A2601 = {
+			isa = PBXGroup;
+			children = (
+				23D010721F062398004A2601 /* HellowWeather */,
+				23D0108F1F062398004A2601 /* HellowWeatherTests */,
+				23D0109A1F062398004A2601 /* HellowWeatherUITests */,
+				23D010711F062398004A2601 /* Products */,
+				40AF247F865BEF6D4F475743 /* Pods */,
+				6CEBD61DAAC39DE35608C5A0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		23D010711F062398004A2601 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23D010701F062398004A2601 /* HellowWeather.app */,
+				23D0108C1F062398004A2601 /* HellowWeatherTests.xctest */,
+				23D010971F062398004A2601 /* HellowWeatherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		23D010721F062398004A2601 /* HellowWeather */ = {
+			isa = PBXGroup;
+			children = (
+				23D010A91F062470004A2601 /* Project */,
+				2398D4EF1F078C4000D7437C /* Vender */,
+				23D010731F062398004A2601 /* Supporting Files */,
+			);
+			path = HellowWeather;
+			sourceTree = "<group>";
+		};
+		23D010731F062398004A2601 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				23D0107C1F062398004A2601 /* Main.storyboard */,
+				23D010821F062398004A2601 /* Assets.xcassets */,
+				23D010841F062398004A2601 /* LaunchScreen.storyboard */,
+				23D0107F1F062398004A2601 /* HellowWeather.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		23D0108F1F062398004A2601 /* HellowWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				23D010901F062398004A2601 /* HellowWeatherTests.m */,
+				23D010921F062398004A2601 /* Info.plist */,
+			);
+			path = HellowWeatherTests;
+			sourceTree = "<group>";
+		};
+		23D0109A1F062398004A2601 /* HellowWeatherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				23D0109B1F062398004A2601 /* HellowWeatherUITests.m */,
+				23D0109D1F062398004A2601 /* Info.plist */,
+			);
+			path = HellowWeatherUITests;
+			sourceTree = "<group>";
+		};
+		23D010A91F062470004A2601 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				23D010BC1F0630D0004A2601 /* Tools */,
+				23D010AA1F062470004A2601 /* AppDelegate */,
+				23D010AD1F062470004A2601 /* Mian */,
+				23D010AE1F062470004A2601 /* Other */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		23D010AA1F062470004A2601 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				23D010AB1F062470004A2601 /* AppDelegate.h */,
+				23D010AC1F062470004A2601 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		23D010AD1F062470004A2601 /* Mian */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B081F09E25700C22F8F /* BaseController */,
+				23D010B41F062524004A2601 /* Home */,
+				23D14B121F0A2BB100C22F8F /* AirDetails */,
+			);
+			path = Mian;
+			sourceTree = "<group>";
+		};
+		23D010AE1F062470004A2601 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				23D010AF1F062470004A2601 /* Info.plist */,
+				23D010B01F062470004A2601 /* main.m */,
+				23D010BB1F062FD3004A2601 /* HLPrefixHeader.pch */,
+				23D14B041F09DDD600C22F8F /* Gatecory */,
+				23D010C11F063325004A2601 /* Const */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		23D010B41F062524004A2601 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				23D010B51F062524004A2601 /* Controller */,
+				23D010B61F062524004A2601 /* Model */,
+				23D010B71F062524004A2601 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		23D010B51F062524004A2601 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				23D010B81F0627A9004A2601 /* HLHomeViewController.h */,
+				23D010B91F0627A9004A2601 /* HLHomeViewController.m */,
+				2398D4EC1F073F0500D7437C /* HLBottomViewController.h */,
+				2398D4ED1F073F0500D7437C /* HLBottomViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		23D010B61F062524004A2601 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23D010C91F06429B004A2601 /* HLWeatherModel.h */,
+				23D010CA1F06429B004A2601 /* HLWeatherModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23D010B71F062524004A2601 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2398D4E81F073EB600D7437C /* BottomView */,
+				23D010C51F06382E004A2601 /* topView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23D010BC1F0630D0004A2601 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				23D010BD1F0631B0004A2601 /* HLNetWorkTool */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		23D010BD1F0631B0004A2601 /* HLNetWorkTool */ = {
+			isa = PBXGroup;
+			children = (
+				23D010BE1F0631E9004A2601 /* HLNetTool.h */,
+				23D010BF1F0631E9004A2601 /* HLNetTool.m */,
+			);
+			path = HLNetWorkTool;
+			sourceTree = "<group>";
+		};
+		23D010C11F063325004A2601 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				23D010C21F063341004A2601 /* HLConst.h */,
+				23D010C31F063341004A2601 /* HLConst.m */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		23D010C51F06382E004A2601 /* topView */ = {
+			isa = PBXGroup;
+			children = (
+				23D010C61F063845004A2601 /* HLTopView.h */,
+				23D010C71F063845004A2601 /* HLTopView.m */,
+				23D010CC1F06455A004A2601 /* HLTopView.xib */,
+			);
+			path = topView;
+			sourceTree = "<group>";
+		};
+		23D14B041F09DDD600C22F8F /* Gatecory */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B0F1F09ECB100C22F8F /* NSDate+DateExtension.h */,
+				23D14B101F09ECB100C22F8F /* NSDate+DateExtension.m */,
+				23D14B0C1F09ECA600C22F8F /* UIView+JYDFrame.h */,
+				23D14B0D1F09ECA600C22F8F /* UIView+JYDFrame.m */,
+				23D14B051F09DDD600C22F8F /* UINavigationBar+Awesome.h */,
+				23D14B061F09DDD600C22F8F /* UINavigationBar+Awesome.m */,
+			);
+			path = Gatecory;
+			sourceTree = "<group>";
+		};
+		23D14B081F09E25700C22F8F /* BaseController */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B091F09E27A00C22F8F /* HLNavigationController.h */,
+				23D14B0A1F09E27A00C22F8F /* HLNavigationController.m */,
+			);
+			path = BaseController;
+			sourceTree = "<group>";
+		};
+		23D14B121F0A2BB100C22F8F /* AirDetails */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B131F0A2BB100C22F8F /* Contrller */,
+				23D14B141F0A2BB100C22F8F /* Model */,
+				23D14B151F0A2BB100C22F8F /* View */,
+			);
+			path = AirDetails;
+			sourceTree = "<group>";
+		};
+		23D14B131F0A2BB100C22F8F /* Contrller */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B161F0A2BD500C22F8F /* HLAirDetailsController.h */,
+				23D14B171F0A2BD500C22F8F /* HLAirDetailsController.m */,
+			);
+			path = Contrller;
+			sourceTree = "<group>";
+		};
+		23D14B141F0A2BB100C22F8F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B901F0A3F7000C22F8F /* HLAirModel.h */,
+				23D14B911F0A3F7000C22F8F /* HLAirModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23D14B151F0A2BB100C22F8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B8D1F0A38D500C22F8F /* HLAirTopView.h */,
+				23D14B8E1F0A38D500C22F8F /* HLAirTopView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23D14B191F0A382800C22F8F /* ZFChart */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B1A1F0A382800C22F8F /* Category */,
+				23D14B251F0A382800C22F8F /* Component */,
+				23D14B2E1F0A382800C22F8F /* Model */,
+				23D14B331F0A382800C22F8F /* Other */,
+				23D14B3A1F0A382800C22F8F /* ZFBarChart */,
+				23D14B3F1F0A382800C22F8F /* ZFCirqueChart */,
+				23D14B441F0A382800C22F8F /* ZFGenericAxis */,
+				23D14B471F0A382800C22F8F /* ZFGenericChart */,
+				23D14B4A1F0A382800C22F8F /* ZFHorizontalAxis */,
+				23D14B4D1F0A382800C22F8F /* ZFHorizontalBarChart */,
+				23D14B521F0A382800C22F8F /* ZFLineChart */,
+				23D14B591F0A382800C22F8F /* ZFPieChart */,
+				23D14B601F0A382800C22F8F /* ZFRadarChart */,
+				23D14B671F0A382900C22F8F /* ZFWaveChart */,
+			);
+			path = ZFChart;
+			sourceTree = "<group>";
+		};
+		23D14B1A1F0A382800C22F8F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B1B1F0A382800C22F8F /* NSNumber+Zirkfied.h */,
+				23D14B1C1F0A382800C22F8F /* NSNumber+Zirkfied.m */,
+				23D14B1D1F0A382800C22F8F /* NSString+Zirkfied.h */,
+				23D14B1E1F0A382800C22F8F /* NSString+Zirkfied.m */,
+				23D14B1F1F0A382800C22F8F /* UIBezierPath+Zirkfied.h */,
+				23D14B201F0A382800C22F8F /* UIBezierPath+Zirkfied.m */,
+				23D14B211F0A382800C22F8F /* UIColor+Zirkfied.h */,
+				23D14B221F0A382800C22F8F /* UIColor+Zirkfied.m */,
+				23D14B231F0A382800C22F8F /* UIView+Zirkfied.h */,
+				23D14B241F0A382800C22F8F /* UIView+Zirkfied.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		23D14B251F0A382800C22F8F /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B261F0A382800C22F8F /* ZFLabel.h */,
+				23D14B271F0A382800C22F8F /* ZFLabel.m */,
+				23D14B281F0A382800C22F8F /* ZFPopoverLabel.h */,
+				23D14B291F0A382800C22F8F /* ZFPopoverLabel.m */,
+				23D14B2A1F0A382800C22F8F /* ZFXAxisLine.h */,
+				23D14B2B1F0A382800C22F8F /* ZFXAxisLine.m */,
+				23D14B2C1F0A382800C22F8F /* ZFYAxisLine.h */,
+				23D14B2D1F0A382800C22F8F /* ZFYAxisLine.m */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		23D14B2E1F0A382800C22F8F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B2F1F0A382800C22F8F /* ZFCurveAttribute.h */,
+				23D14B301F0A382800C22F8F /* ZFCurveAttribute.m */,
+				23D14B311F0A382800C22F8F /* ZFGradientAttribute.h */,
+				23D14B321F0A382800C22F8F /* ZFGradientAttribute.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23D14B331F0A382800C22F8F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B341F0A382800C22F8F /* ZFChart.h */,
+				23D14B351F0A382800C22F8F /* ZFColor.h */,
+				23D14B361F0A382800C22F8F /* ZFConst.h */,
+				23D14B371F0A382800C22F8F /* ZFConst.m */,
+				23D14B381F0A382800C22F8F /* ZFMethod.h */,
+				23D14B391F0A382800C22F8F /* ZFMethod.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		23D14B3A1F0A382800C22F8F /* ZFBarChart */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B3B1F0A382800C22F8F /* ZFBar.h */,
+				23D14B3C1F0A382800C22F8F /* ZFBar.m */,
+				23D14B3D1F0A382800C22F8F /* ZFBarChart.h */,
+				23D14B3E1F0A382800C22F8F /* ZFBarChart.m */,
+			);
+			path = ZFBarChart;
+			sourceTree = "<group>";
+		};
+		23D14B3F1F0A382800C22F8F /* ZFCirqueChart */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B401F0A382800C22F8F /* ZFCirque.h */,
+				23D14B411F0A382800C22F8F /* ZFCirque.m */,
+				23D14B421F0A382800C22F8F /* ZFCirqueChart.h */,
+				23D14B431F0A382800C22F8F /* ZFCirqueChart.m */,
+			);
+			path = ZFCirqueChart;
+			sourceTree = "<group>";
+		};
+		23D14B441F0A382800C22F8F /* ZFGenericAxis */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B451F0A382800C22F8F /* ZFGenericAxis.h */,
+				23D14B461F0A382800C22F8F /* ZFGenericAxis.m */,
+			);
+			path = ZFGenericAxis;
+			sourceTree = "<group>";
+		};
+		23D14B471F0A382800C22F8F /* ZFGenericChart */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B481F0A382800C22F8F /* ZFGenericChart.h */,
+				23D14B491F0A382800C22F8F /* ZFGenericChart.m */,
+			);
+			path = ZFGenericChart;
+			sourceTree = "<group>";
+		};
+		23D14B4A1F0A382800C22F8F /* ZFHorizontalAxis */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B4B1F0A382800C22F8F /* ZFHorizontalAxis.h */,
+				23D14B4C1F0A382800C22F8F /* ZFHorizontalAxis.m */,
+			);
+			path = ZFHorizontalAxis;
+			sourceTree = "<group>";
+		};
+		23D14B4D1F0A382800C22F8F /* ZFHorizontalBarChart */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B4E1F0A382800C22F8F /* ZFHorizontalBar.h */,
+				23D14B4F1F0A382800C22F8F /* ZFHorizontalBar.m */,
+				23D14B501F0A382800C22F8F /* ZFHorizontalBarChart.h */,
+				23D14B511F0A382800C22F8F /* ZFHorizontalBarChart.m */,
+			);
+			path = ZFHorizontalBarChart;
+			sourceTree = "<group>";
+		};
+		23D14B521F0A382800C22F8F /* ZFLineChart */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B531F0A382800C22F8F /* ZFCircle.h */,
+				23D14B541F0A382800C22F8F /* ZFCircle.m */,
+				23D14B551F0A382800C22F8F /* ZFLine.h */,
+				23D14B561F0A382800C22F8F /* ZFLine.m */,
+				23D14B571F0A382800C22F8F /* ZFLineChart.h */,
+				23D14B581F0A382800C22F8F /* ZFLineChart.m */,
+			);
+			path = ZFLineChart;
+			sourceTree = "<group>";
+		};
+		23D14B591F0A382800C22F8F /* ZFPieChart */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B5A1F0A382800C22F8F /* ZFPie.h */,
+				23D14B5B1F0A382800C22F8F /* ZFPie.m */,
+				23D14B5C1F0A382800C22F8F /* ZFPieChart.h */,
+				23D14B5D1F0A382800C22F8F /* ZFPieChart.m */,
+				23D14B5E1F0A382800C22F8F /* ZFTranslucencePath.h */,
+				23D14B5F1F0A382800C22F8F /* ZFTranslucencePath.m */,
+			);
+			path = ZFPieChart;
+			sourceTree = "<group>";
+		};
+		23D14B601F0A382800C22F8F /* ZFRadarChart */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B611F0A382800C22F8F /* ZFPolygon.h */,
+				23D14B621F0A382900C22F8F /* ZFPolygon.m */,
+				23D14B631F0A382900C22F8F /* ZFRadar.h */,
+				23D14B641F0A382900C22F8F /* ZFRadar.m */,
+				23D14B651F0A382900C22F8F /* ZFRadarChart.h */,
+				23D14B661F0A382900C22F8F /* ZFRadarChart.m */,
+			);
+			path = ZFRadarChart;
+			sourceTree = "<group>";
+		};
+		23D14B671F0A382900C22F8F /* ZFWaveChart */ = {
+			isa = PBXGroup;
+			children = (
+				23D14B681F0A382900C22F8F /* ZFWave.h */,
+				23D14B691F0A382900C22F8F /* ZFWave.m */,
+				23D14B6A1F0A382900C22F8F /* ZFWaveChart.h */,
+				23D14B6B1F0A382900C22F8F /* ZFWaveChart.m */,
+			);
+			path = ZFWaveChart;
+			sourceTree = "<group>";
+		};
+		40AF247F865BEF6D4F475743 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9075F4E20991CD80EA66CFCC /* Pods-HellowWeather.debug.xcconfig */,
+				96FF74B50F84F2940ED27F4B /* Pods-HellowWeather.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6CEBD61DAAC39DE35608C5A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87F2DE5D33FA81EE51283BD2 /* libPods-HellowWeather.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23D0106F1F062398004A2601 /* HellowWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23D010A01F062398004A2601 /* Build configuration list for PBXNativeTarget "HellowWeather" */;
+			buildPhases = (
+				E04BCA58ED34742D300FD743 /* [CP] Check Pods Manifest.lock */,
+				23D0106C1F062398004A2601 /* Sources */,
+				23D0106D1F062398004A2601 /* Frameworks */,
+				23D0106E1F062398004A2601 /* Resources */,
+				BD859F6435D52D5B8624748D /* [CP] Embed Pods Frameworks */,
+				8534244F4A89781C884A3C42 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HellowWeather;
+			productName = HellowWeather;
+			productReference = 23D010701F062398004A2601 /* HellowWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		23D0108B1F062398004A2601 /* HellowWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23D010A31F062398004A2601 /* Build configuration list for PBXNativeTarget "HellowWeatherTests" */;
+			buildPhases = (
+				23D010881F062398004A2601 /* Sources */,
+				23D010891F062398004A2601 /* Frameworks */,
+				23D0108A1F062398004A2601 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23D0108E1F062398004A2601 /* PBXTargetDependency */,
+			);
+			name = HellowWeatherTests;
+			productName = HellowWeatherTests;
+			productReference = 23D0108C1F062398004A2601 /* HellowWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		23D010961F062398004A2601 /* HellowWeatherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23D010A61F062398004A2601 /* Build configuration list for PBXNativeTarget "HellowWeatherUITests" */;
+			buildPhases = (
+				23D010931F062398004A2601 /* Sources */,
+				23D010941F062398004A2601 /* Frameworks */,
+				23D010951F062398004A2601 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23D010991F062398004A2601 /* PBXTargetDependency */,
+			);
+			name = HellowWeatherUITests;
+			productName = HellowWeatherUITests;
+			productReference = 23D010971F062398004A2601 /* HellowWeatherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		23D010681F062398004A2601 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HL;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Pisces;
+				TargetAttributes = {
+					23D0106F1F062398004A2601 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HMZ598MKR3;
+						ProvisioningStyle = Automatic;
+					};
+					23D0108B1F062398004A2601 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 23D0106F1F062398004A2601;
+					};
+					23D010961F062398004A2601 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 23D0106F1F062398004A2601;
+					};
+				};
+			};
+			buildConfigurationList = 23D0106B1F062398004A2601 /* Build configuration list for PBXProject "HellowWeather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 23D010671F062398004A2601;
+			productRefGroup = 23D010711F062398004A2601 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23D0106F1F062398004A2601 /* HellowWeather */,
+				23D0108B1F062398004A2601 /* HellowWeatherTests */,
+				23D010961F062398004A2601 /* HellowWeatherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23D0106E1F062398004A2601 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23D010B21F062470004A2601 /* Info.plist in Resources */,
+				23D010861F062398004A2601 /* LaunchScreen.storyboard in Resources */,
+				23D010831F062398004A2601 /* Assets.xcassets in Resources */,
+				23D0107E1F062398004A2601 /* Main.storyboard in Resources */,
+				23D010CD1F06455A004A2601 /* HLTopView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D0108A1F062398004A2601 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D010951F062398004A2601 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8534244F4A89781C884A3C42 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HellowWeather/Pods-HellowWeather-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD859F6435D52D5B8624748D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HellowWeather/Pods-HellowWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E04BCA58ED34742D300FD743 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		23D0106C1F062398004A2601 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23D010CB1F06429B004A2601 /* HLWeatherModel.m in Sources */,
+				23D14B801F0A382900C22F8F /* ZFHorizontalBar.m in Sources */,
+				23D14B721F0A382900C22F8F /* ZFPopoverLabel.m in Sources */,
+				23D14B6D1F0A382900C22F8F /* NSString+Zirkfied.m in Sources */,
+				23D14B771F0A382900C22F8F /* ZFConst.m in Sources */,
+				23D14B181F0A2BD500C22F8F /* HLAirDetailsController.m in Sources */,
+				23D14B761F0A382900C22F8F /* ZFGradientAttribute.m in Sources */,
+				23D14B0B1F09E27A00C22F8F /* HLNavigationController.m in Sources */,
+				23D14B8C1F0A382900C22F8F /* ZFWaveChart.m in Sources */,
+				23D14B781F0A382900C22F8F /* ZFMethod.m in Sources */,
+				23D14B811F0A382900C22F8F /* ZFHorizontalBarChart.m in Sources */,
+				23D14B791F0A382900C22F8F /* ZFBar.m in Sources */,
+				23D14B7B1F0A382900C22F8F /* ZFCirque.m in Sources */,
+				23D14B6E1F0A382900C22F8F /* UIBezierPath+Zirkfied.m in Sources */,
+				23D14B7F1F0A382900C22F8F /* ZFHorizontalAxis.m in Sources */,
+				23D14B711F0A382900C22F8F /* ZFLabel.m in Sources */,
+				23D14B111F09ECB100C22F8F /* NSDate+DateExtension.m in Sources */,
+				23D14B6C1F0A382900C22F8F /* NSNumber+Zirkfied.m in Sources */,
+				23D14B851F0A382900C22F8F /* ZFPie.m in Sources */,
+				23D14B861F0A382900C22F8F /* ZFPieChart.m in Sources */,
+				23D14B701F0A382900C22F8F /* UIView+Zirkfied.m in Sources */,
+				23D14B8B1F0A382900C22F8F /* ZFWave.m in Sources */,
+				2398D4EE1F073F0500D7437C /* HLBottomViewController.m in Sources */,
+				23D010811F062398004A2601 /* HellowWeather.xcdatamodeld in Sources */,
+				23D14B921F0A3F7000C22F8F /* HLAirModel.m in Sources */,
+				23D14B841F0A382900C22F8F /* ZFLineChart.m in Sources */,
+				23D14B741F0A382900C22F8F /* ZFYAxisLine.m in Sources */,
+				23D14B891F0A382900C22F8F /* ZFRadar.m in Sources */,
+				23D010B31F062470004A2601 /* main.m in Sources */,
+				23D14B871F0A382900C22F8F /* ZFTranslucencePath.m in Sources */,
+				23D14B6F1F0A382900C22F8F /* UIColor+Zirkfied.m in Sources */,
+				23D010BA1F0627A9004A2601 /* HLHomeViewController.m in Sources */,
+				23D14B0E1F09ECA600C22F8F /* UIView+JYDFrame.m in Sources */,
+				23D14B7A1F0A382900C22F8F /* ZFBarChart.m in Sources */,
+				2398D4EB1F073ED900D7437C /* HLBottomView.m in Sources */,
+				23D14B751F0A382900C22F8F /* ZFCurveAttribute.m in Sources */,
+				23D14B881F0A382900C22F8F /* ZFPolygon.m in Sources */,
+				23D14B7E1F0A382900C22F8F /* ZFGenericChart.m in Sources */,
+				23D010C41F063341004A2601 /* HLConst.m in Sources */,
+				23D010C81F063845004A2601 /* HLTopView.m in Sources */,
+				23D14B831F0A382900C22F8F /* ZFLine.m in Sources */,
+				23D010B11F062470004A2601 /* AppDelegate.m in Sources */,
+				23D14B8A1F0A382900C22F8F /* ZFRadarChart.m in Sources */,
+				23D14B071F09DDD600C22F8F /* UINavigationBar+Awesome.m in Sources */,
+				23D010C01F0631E9004A2601 /* HLNetTool.m in Sources */,
+				23D14B7D1F0A382900C22F8F /* ZFGenericAxis.m in Sources */,
+				23D14B8F1F0A38D500C22F8F /* HLAirTopView.m in Sources */,
+				23D14B7C1F0A382900C22F8F /* ZFCirqueChart.m in Sources */,
+				23D14B821F0A382900C22F8F /* ZFCircle.m in Sources */,
+				23D14B731F0A382900C22F8F /* ZFXAxisLine.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D010881F062398004A2601 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23D010911F062398004A2601 /* HellowWeatherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23D010931F062398004A2601 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23D0109C1F062398004A2601 /* HellowWeatherUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		23D0108E1F062398004A2601 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23D0106F1F062398004A2601 /* HellowWeather */;
+			targetProxy = 23D0108D1F062398004A2601 /* PBXContainerItemProxy */;
+		};
+		23D010991F062398004A2601 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23D0106F1F062398004A2601 /* HellowWeather */;
+			targetProxy = 23D010981F062398004A2601 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		23D0107C1F062398004A2601 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23D0107D1F062398004A2601 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		23D010841F062398004A2601 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23D010851F062398004A2601 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		23D0109E1F062398004A2601 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		23D0109F1F062398004A2601 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		23D010A11F062398004A2601 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9075F4E20991CD80EA66CFCC /* Pods-HellowWeather.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = HMZ598MKR3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HellowWeather/Project/Other/HLPrefixHeader.pch;
+				INFOPLIST_FILE = HellowWeather/Project/Other/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JYD.HellowWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		23D010A21F062398004A2601 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96FF74B50F84F2940ED27F4B /* Pods-HellowWeather.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = HMZ598MKR3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = HellowWeather/Project/Other/HLPrefixHeader.pch;
+				INFOPLIST_FILE = HellowWeather/Project/Other/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JYD.HellowWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		23D010A41F062398004A2601 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HellowWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JYD.HellowWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HellowWeather.app/HellowWeather";
+			};
+			name = Debug;
+		};
+		23D010A51F062398004A2601 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HellowWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JYD.HellowWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HellowWeather.app/HellowWeather";
+			};
+			name = Release;
+		};
+		23D010A71F062398004A2601 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HellowWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JYD.HellowWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HellowWeather;
+			};
+			name = Debug;
+		};
+		23D010A81F062398004A2601 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HellowWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JYD.HellowWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HellowWeather;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23D0106B1F062398004A2601 /* Build configuration list for PBXProject "HellowWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23D0109E1F062398004A2601 /* Debug */,
+				23D0109F1F062398004A2601 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23D010A01F062398004A2601 /* Build configuration list for PBXNativeTarget "HellowWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23D010A11F062398004A2601 /* Debug */,
+				23D010A21F062398004A2601 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23D010A31F062398004A2601 /* Build configuration list for PBXNativeTarget "HellowWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23D010A41F062398004A2601 /* Debug */,
+				23D010A51F062398004A2601 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23D010A61F062398004A2601 /* Build configuration list for PBXNativeTarget "HellowWeatherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23D010A71F062398004A2601 /* Debug */,
+				23D010A81F062398004A2601 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		23D0107F1F062398004A2601 /* HellowWeather.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				23D010801F062398004A2601 /* HellowWeather.xcdatamodel */,
+			);
+			currentVersion = 23D010801F062398004A2601 /* HellowWeather.xcdatamodel */;
+			path = HellowWeather.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 23D010681F062398004A2601 /* Project object */;
+}

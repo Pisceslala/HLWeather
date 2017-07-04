@@ -21,7 +21,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    //test
     //加载数据
     [self loadNewDataWithCity:nil andProvince:nil];
 }

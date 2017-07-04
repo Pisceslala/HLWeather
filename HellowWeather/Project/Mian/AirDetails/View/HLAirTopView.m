@@ -40,7 +40,7 @@
 
 #pragma mark - 初始化
 - (void)setupViews {
-    //self.backgroundColor = [UIColor orangeColor];
+    //圆环图
     ZFCirqueChart *chartView = [[ZFCirqueChart alloc] initWithFrame:CGRectMake(0, 0, SSScreenW, 300)];
     chartView.backgroundColor = [UIColor clearColor];
     chartView.dataSource = self;

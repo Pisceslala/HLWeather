@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2398D4EB1F073ED900D7437C /* HLBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2398D4EA1F073ED900D7437C /* HLBottomView.m */; };
 		2398D4EE1F073F0500D7437C /* HLBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2398D4ED1F073F0500D7437C /* HLBottomViewController.m */; };
+		2399E02D1F0B423500C4620F /* HLAirTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2399E02C1F0B423500C4620F /* HLAirTableController.m */; };
 		23D0107E1F062398004A2601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D0107C1F062398004A2601 /* Main.storyboard */; };
 		23D010811F062398004A2601 /* HellowWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23D0107F1F062398004A2601 /* HellowWeather.xcdatamodeld */; };
 		23D010831F062398004A2601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23D010821F062398004A2601 /* Assets.xcassets */; };
@@ -89,6 +90,8 @@
 		2398D4EA1F073ED900D7437C /* HLBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLBottomView.m; sourceTree = "<group>"; };
 		2398D4EC1F073F0500D7437C /* HLBottomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLBottomViewController.h; sourceTree = "<group>"; };
 		2398D4ED1F073F0500D7437C /* HLBottomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLBottomViewController.m; sourceTree = "<group>"; };
+		2399E02B1F0B423500C4620F /* HLAirTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLAirTableController.h; sourceTree = "<group>"; };
+		2399E02C1F0B423500C4620F /* HLAirTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAirTableController.m; sourceTree = "<group>"; };
 		23D010701F062398004A2601 /* HellowWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HellowWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23D0107D1F062398004A2601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		23D010801F062398004A2601 /* HellowWeather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HellowWeather.xcdatamodel; sourceTree = "<group>"; };
@@ -462,6 +465,8 @@
 			children = (
 				23D14B161F0A2BD500C22F8F /* HLAirDetailsController.h */,
 				23D14B171F0A2BD500C22F8F /* HLAirDetailsController.m */,
+				2399E02B1F0B423500C4620F /* HLAirTableController.h */,
+				2399E02C1F0B423500C4620F /* HLAirTableController.m */,
 			);
 			path = Contrller;
 			sourceTree = "<group>";
@@ -880,6 +885,7 @@
 				23D14B801F0A382900C22F8F /* ZFHorizontalBar.m in Sources */,
 				23D14B721F0A382900C22F8F /* ZFPopoverLabel.m in Sources */,
 				23D14B6D1F0A382900C22F8F /* NSString+Zirkfied.m in Sources */,
+				2399E02D1F0B423500C4620F /* HLAirTableController.m in Sources */,
 				23D14B771F0A382900C22F8F /* ZFConst.m in Sources */,
 				23D14B181F0A2BD500C22F8F /* HLAirDetailsController.m in Sources */,
 				23D14B761F0A382900C22F8F /* ZFGradientAttribute.m in Sources */,

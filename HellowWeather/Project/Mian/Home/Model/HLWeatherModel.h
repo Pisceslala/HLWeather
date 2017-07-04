@@ -91,6 +91,11 @@
  */
 @property (nonatomic, strong) NSArray *future;
 
+/**
+ 更新时间
+ */
+@property (nonatomic, copy) NSString *time;
+
 @end
 
 @interface futureModel : NSObject

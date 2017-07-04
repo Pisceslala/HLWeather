@@ -41,7 +41,7 @@
     
     //根据城市名称加载
     [self loadNewDataWithCity:@"广州" andProvince:@"广东省"];
-    self.topView.stautsLabel.hidden = NO;
+    self.topView.stautsLabel.JYD_Height = 13;
     
 }
 - (void)viewDidDisappear:(BOOL)animated {
@@ -91,7 +91,7 @@
     
     NSDictionary *parameters = NSDictionaryOfVariableBindings(province,key,city);
     
-    self.topView.stautsLabel.text = @"更新....";
+    self.topView.stautsLabel.text = @"更新数据";
     
     [[HLNetTool shareTools] GET:query parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         

@@ -103,13 +103,13 @@
         [self weatherImageWithName:@"雷阵雨"];
     }
     
-    self.stautsLabel.attributedText = [self attributedStringWithImage:@"Success" AppendString:@"更新成功"];
-    [self performSelector:@selector(hideStatusLabel) withObject:self afterDelay:1];
+    self.stautsLabel.text = [NSString stringWithFormat:@"更新成功 %@发布",model.time];
+    [self performSelector:@selector(hideStatusLabel) withObject:self afterDelay:2];
 }
 
 - (void)hideStatusLabel {
     [UIView animateWithDuration:0.2 animations:^{
-        self.stautsLabel.hidden = YES;
+        self.stautsLabel.JYD_Height = 0;
     }];
 }
 

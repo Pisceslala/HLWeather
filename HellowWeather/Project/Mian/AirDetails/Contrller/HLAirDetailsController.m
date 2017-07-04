@@ -10,18 +10,21 @@
 #import "HLAirTopView.h"
 #import "HLAirModel.h"
 #import <MJExtension.h>
+#import "HLAirTableController.h"
 @interface HLAirDetailsController ()
 
 @property (nonatomic, strong) HLAirTopView *topView;
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
+
+@property (nonatomic, strong) UIScrollView *scrollView;
 @end
 
 @implementation HLAirDetailsController
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    self.navigationController.hidesBarsOnSwipe = YES;
     //加载数据
     [self loadNewDataWithCity:self.cityName andProvince:self.provinceName];
 }
@@ -34,13 +37,17 @@
 
 - (void)setupViews {
     
+    
+    
     UIImageView *bg = [[UIImageView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:bg];
     bg.image = [UIImage imageNamed:@"bg1"];
     
+    [self.view addSubview:self.scrollView];
+    
     HLAirTopView *topView = [[HLAirTopView alloc] initWithFrame:CGRectMake(0, 64, SSScreenW, 300)];
     self.topView = topView;
-    [self.view addSubview:topView];
+    [self.scrollView addSubview:topView];
 
 }
 
@@ -73,7 +80,17 @@
     return _dataArray;
 }
 
-
+- (UIScrollView *)scrollView {
+    if (_scrollView == nil) {
+        UIScrollView *sc = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        sc.bounces = NO;
+        //sc.showsVerticalScrollIndicator = NO;
+        sc.showsHorizontalScrollIndicator = NO;
+        sc.contentSize = CGSizeMake(0,2 * SSScreenH);
+        _scrollView = sc;
+    }
+    return _scrollView;
+}
 
 #pragma mark - set
 - (void)setBgImage:(UIImage *)bgImage {

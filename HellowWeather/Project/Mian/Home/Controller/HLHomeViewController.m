@@ -25,7 +25,9 @@
 
 @property (nonatomic, strong) HLBottomViewController *bottomVC;
 
+@property (nonatomic, strong) NSString *cityName;
 
+@property (nonatomic, strong) NSString *provinceName;
 
 @end
 
@@ -80,6 +82,9 @@
 #pragma mark - 加载新数据
 - (void)loadNewDataWithCity:(NSString *)cityName andProvince:(NSString *)provinceName{
 
+    self.cityName = cityName;
+    self.provinceName = provinceName;
+    
     NSString *city = cityName;
     NSString *key = appkey;
     NSString *province = provinceName;
@@ -122,6 +127,8 @@
 - (void)didClickAirFaceBookInTopView {
     HLAirDetailsController *vc = [[HLAirDetailsController alloc] init];
     vc.bgImage = self.image;
+    vc.cityName = self.cityName;
+    vc.provinceName = self.provinceName;
     vc.title = @"空气质量指数";
     [self.navigationController pushViewController:vc animated:YES];
 }

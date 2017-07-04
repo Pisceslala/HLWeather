@@ -12,4 +12,8 @@
 
 @property (nonatomic, strong) UIImage *bgImage;
 
+@property (nonatomic, copy) NSString *cityName;
+
+@property (nonatomic, copy) NSString *provinceName;
+
 @end

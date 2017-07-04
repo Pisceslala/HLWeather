@@ -21,9 +21,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    //test
+    
     //加载数据
-    [self loadNewDataWithCity:nil andProvince:nil];
+    [self loadNewDataWithCity:self.cityName andProvince:self.provinceName];
 }
 
 - (void)viewDidLoad {
@@ -47,8 +47,8 @@
 #pragma mark - 加载数据
 - (void)loadNewDataWithCity:(NSString *)cityName andProvince:(NSString *)provinceName {
     
-    NSString *city = @"广州";
-    NSString *province = @"广东省";
+    NSString *city = cityName;
+    NSString *province = provinceName;
     NSString *key = appkey;
     NSDictionary *parm = NSDictionaryOfVariableBindings(province,key,city);
     [[HLNetTool shareTools] GET:environmentQuery parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -74,13 +74,23 @@
 }
 
 
+
+#pragma mark - set
+- (void)setBgImage:(UIImage *)bgImage {
+    _bgImage = bgImage;
+}
+
+- (void)setCityName:(NSString *)cityName {
+    _cityName = cityName;
+}
+
+-(void)setProvinceName:(NSString *)provinceName {
+    _provinceName = provinceName;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)setBgImage:(UIImage *)bgImage {
-    _bgImage = bgImage;
 }
 
 - (void)dealloc {

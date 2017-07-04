@@ -23,5 +23,6 @@
 
 @property (weak, nonatomic) id<HLTopViewDelegate> delegate;
 
+@property (weak, nonatomic) IBOutlet UILabel *stautsLabel;
 
 @end

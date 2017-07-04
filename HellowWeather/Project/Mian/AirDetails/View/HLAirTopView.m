@@ -49,6 +49,8 @@
     self.chartView = chartView;
     self.chartView.isResetMaxValue = YES;
     [self addSubview:chartView];
+    
+    
 }
 
 #pragma mark - dataSource

@@ -50,7 +50,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-
+    [self setupViews];
 }
 
 +(instancetype)showTopView {
@@ -59,6 +59,10 @@
 
 + (void)show {
     [[[NSBundle mainBundle] loadNibNamed:@"HLTopView" owner:nil options:nil] lastObject];
+}
+
+- (void)setupViews {
+    
 }
 
 #pragma mark - 设置数据
@@ -99,6 +103,14 @@
         [self weatherImageWithName:@"雷阵雨"];
     }
     
+    self.stautsLabel.attributedText = [self attributedStringWithImage:@"Success" AppendString:@"更新成功"];
+    [self performSelector:@selector(hideStatusLabel) withObject:self afterDelay:1];
+}
+
+- (void)hideStatusLabel {
+    [UIView animateWithDuration:0.2 animations:^{
+        self.stautsLabel.hidden = YES;
+    }];
 }
 
 - (void)weatherImageWithName:(NSString *)imageName {

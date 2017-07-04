@@ -54,28 +54,41 @@
                     <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <size key="shadowOffset" width="1" height="1"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更新数据..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMi-OY-1LO">
+                    <rect key="frame" x="30" y="89" width="114" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="8dD-cU-e0z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="LWR-ND-r0u" firstAttribute="top" secondItem="pag-RD-UET" secondAttribute="bottom" constant="5" id="2vz-dq-BdT"/>
                 <constraint firstItem="LWR-ND-r0u" firstAttribute="centerX" secondItem="pag-RD-UET" secondAttribute="centerX" id="ECY-Lg-5gD"/>
                 <constraint firstItem="pag-RD-UET" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="GC4-PZ-XSB"/>
+                <constraint firstItem="pMi-OY-1LO" firstAttribute="centerX" secondItem="pag-RD-UET" secondAttribute="centerX" id="RzY-X1-NhR"/>
                 <constraint firstItem="p0C-bs-DGF" firstAttribute="leading" secondItem="pag-RD-UET" secondAttribute="trailing" constant="7" id="Slr-fb-Lgq"/>
                 <constraint firstItem="p0C-bs-DGF" firstAttribute="top" secondItem="pag-RD-UET" secondAttribute="top" id="Wxh-8H-ZhP"/>
                 <constraint firstAttribute="trailing" secondItem="e1C-cG-FNJ" secondAttribute="trailing" constant="15" id="bF8-qG-QUU"/>
                 <constraint firstItem="e1C-cG-FNJ" firstAttribute="top" secondItem="pag-RD-UET" secondAttribute="top" id="lpH-mK-Voo"/>
                 <constraint firstItem="pag-RD-UET" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="110" id="mb5-bM-TAT"/>
+                <constraint firstItem="pMi-OY-1LO" firstAttribute="leading" secondItem="pag-RD-UET" secondAttribute="leading" id="ogf-zo-miX"/>
+                <constraint firstItem="pag-RD-UET" firstAttribute="top" secondItem="pMi-OY-1LO" secondAttribute="bottom" id="qPL-g8-DhA"/>
                 <constraint firstItem="LWR-ND-r0u" firstAttribute="leading" secondItem="pag-RD-UET" secondAttribute="leading" id="v1s-Ag-TJD"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="pointLabel" destination="p0C-bs-DGF" id="g2h-fj-hnm"/>
+                <outlet property="stautsLabel" destination="pMi-OY-1LO" id="Oo0-2t-2R5"/>
                 <outlet property="temperatureLabel" destination="pag-RD-UET" id="j9N-Qg-hSe"/>
                 <outlet property="weatherImage" destination="e1C-cG-FNJ" id="w2Q-Yy-R4M"/>
                 <outlet property="weatherLabel" destination="LWR-ND-r0u" id="532-3h-H4j"/>
             </connections>
-            <point key="canvasLocation" x="-645" y="247"/>
+            <point key="canvasLocation" x="-264" y="295"/>
         </view>
     </objects>
 </document>

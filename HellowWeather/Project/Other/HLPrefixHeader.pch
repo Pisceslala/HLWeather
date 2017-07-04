@@ -12,7 +12,7 @@
 //头文件
 #import "HLConst.h"
 #import "HLNetTool.h"
-
+#import <SVProgressHUD.h>
 /** 宏 **/
 
 #define SSScreenW [UIScreen mainScreen].bounds.size.width

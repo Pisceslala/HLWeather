@@ -41,7 +41,7 @@
     
     //根据城市名称加载
     [self loadNewDataWithCity:@"广州" andProvince:@"广东省"];
-
+    self.topView.stautsLabel.hidden = NO;
     
 }
 - (void)viewDidDisappear:(BOOL)animated {
@@ -81,7 +81,7 @@
 }
 #pragma mark - 加载新数据
 - (void)loadNewDataWithCity:(NSString *)cityName andProvince:(NSString *)provinceName{
-
+    
     self.cityName = cityName;
     self.provinceName = provinceName;
     
@@ -91,8 +91,10 @@
     
     NSDictionary *parameters = NSDictionaryOfVariableBindings(province,key,city);
     
+    self.topView.stautsLabel.text = @"更新....";
+    
     [[HLNetTool shareTools] GET:query parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-
+        
         NSLog(@"%@",responseObject);
         
         self.dataArray = [HLWeatherModel mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];

@@ -42,17 +42,19 @@
     
     
     UIImageView *bg = [[UIImageView alloc] initWithFrame:self.view.bounds];
+           bg.image = [UIImage imageNamed:@"bg1"];
+    
     [self.view addSubview:bg];
-    bg.image = [UIImage imageNamed:@"bg1"];
     
     [self.view addSubview:self.scrollView];
     
     HLAirTopView *topView = [[HLAirTopView alloc] initWithFrame:CGRectMake(0, 64, SSScreenW, 300)];
-    self.topView = topView;
+             self.topView = topView;
+   
     [self.scrollView addSubview:topView];
     
     HLAirTableController *contentVC = [[HLAirTableController alloc] initWithStyle:UITableViewStylePlain];
-    self.contentVC = contentVC;
+                     self.contentVC = contentVC;
 
 
 }
@@ -64,19 +66,24 @@
     NSString *province = provinceName;
     NSString *key = appkey;
     NSDictionary *parm = NSDictionaryOfVariableBindings(province,key,city);
+   
     [[HLNetTool shareTools] GET:environmentQuery parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"res === %@",responseObject);
         
         self.dataArray = [HLAirModel mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];
         for (HLAirModel *model in self.dataArray) {
-            self.topView.model = model;
-            self.contentVC.fetureData = model.fetureData;
             
-            self.contentVC.view.frame = CGRectMake(0, CGRectGetMaxY(self.topView.frame), SSScreenW, (model.fetureData.count * 60) + 30);
+            self.topView.model          = model;
+            
+            self.contentVC.fetureData   = model.fetureData;
+            
+            self.contentVC.view.frame   = CGRectMake(0, CGRectGetMaxY(self.topView.frame), SSScreenW, (model.fetureData.count * 60) + 30);
             
             [self.scrollView addSubview:self.contentVC.view];
+            
+            self.scrollView.contentSize = CGSizeMake(0, self.topView.JYD_Height + self.contentVC.view.JYD_Height + 60);
+
         }
-        
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -96,10 +103,8 @@
 - (UIScrollView *)scrollView {
     if (_scrollView == nil) {
         UIScrollView *sc = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        sc.bounces = NO;
-        //sc.showsVerticalScrollIndicator = NO;
+        sc.bounces  = YES;
         sc.showsHorizontalScrollIndicator = NO;
-        sc.contentSize = CGSizeMake(0,2 * SSScreenH);
         _scrollView = sc;
     }
     return _scrollView;
@@ -125,6 +130,7 @@
 
 - (void)dealloc {
     NSLog(@"HLAirDetailsController dealloc");
+    [self.contentVC.view removeFromSuperview];
 }
 
 @end

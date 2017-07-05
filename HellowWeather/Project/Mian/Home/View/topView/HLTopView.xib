@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HLTopView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HLTopView">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="473"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="521"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pag-RD-UET">
@@ -54,8 +54,8 @@
                     <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <size key="shadowOffset" width="1" height="1"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="更新数据..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMi-OY-1LO">
-                    <rect key="frame" x="30" y="94" width="116" height="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更新数据..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMi-OY-1LO">
+                    <rect key="frame" x="30" y="94" width="64.5" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="AHJ-N9-X4v"/>
                     </constraints>
@@ -63,13 +63,22 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="kuT-ES-hTE">
+                    <rect key="frame" x="5" y="94.5" width="15" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="Fpr-Bt-JZT"/>
+                        <constraint firstAttribute="height" constant="15" id="Usr-gV-N3c"/>
+                    </constraints>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="LWR-ND-r0u" firstAttribute="top" secondItem="pag-RD-UET" secondAttribute="bottom" constant="5" id="2vz-dq-BdT"/>
                 <constraint firstItem="LWR-ND-r0u" firstAttribute="centerX" secondItem="pag-RD-UET" secondAttribute="centerX" id="ECY-Lg-5gD"/>
+                <constraint firstItem="kuT-ES-hTE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="Ecp-tq-PG5"/>
                 <constraint firstItem="pag-RD-UET" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="GC4-PZ-XSB"/>
                 <constraint firstItem="pMi-OY-1LO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="Gup-S4-Bkf"/>
+                <constraint firstItem="kuT-ES-hTE" firstAttribute="centerY" secondItem="pMi-OY-1LO" secondAttribute="centerY" id="Gyy-6T-13G"/>
                 <constraint firstItem="p0C-bs-DGF" firstAttribute="leading" secondItem="pag-RD-UET" secondAttribute="trailing" constant="7" id="Slr-fb-Lgq"/>
                 <constraint firstItem="p0C-bs-DGF" firstAttribute="top" secondItem="pag-RD-UET" secondAttribute="top" id="Wxh-8H-ZhP"/>
                 <constraint firstItem="pMi-OY-1LO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="94" id="YST-as-5OS"/>
@@ -82,12 +91,13 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="pointLabel" destination="p0C-bs-DGF" id="g2h-fj-hnm"/>
+                <outlet property="statusAct" destination="kuT-ES-hTE" id="sXo-M3-eQe"/>
                 <outlet property="stautsLabel" destination="pMi-OY-1LO" id="Oo0-2t-2R5"/>
                 <outlet property="temperatureLabel" destination="pag-RD-UET" id="j9N-Qg-hSe"/>
                 <outlet property="weatherImage" destination="e1C-cG-FNJ" id="w2Q-Yy-R4M"/>
                 <outlet property="weatherLabel" destination="LWR-ND-r0u" id="532-3h-H4j"/>
             </connections>
-            <point key="canvasLocation" x="-264" y="295"/>
+            <point key="canvasLocation" x="61" y="304"/>
         </view>
     </objects>
 </document>

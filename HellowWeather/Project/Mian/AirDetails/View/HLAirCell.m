@@ -16,6 +16,8 @@
 
 @property (strong, nonatomic) UILabel *qualityLabel;
 
+@property (strong, nonatomic) UILabel *dateLabel;
+
 @end
 
 @implementation HLAirCell
@@ -42,7 +44,8 @@
 }
 
 - (void)loadContentView {
-    ZFCirqueChart *chartView = [[ZFCirqueChart alloc] initWithFrame:CGRectMake(5, 0, 50, 50)];
+    //圆环
+    ZFCirqueChart *chartView = [[ZFCirqueChart alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     chartView.backgroundColor = [UIColor clearColor];
     chartView.delegate = self;
     chartView.dataSource = self;
@@ -51,6 +54,7 @@
     self.chartView.isResetMaxValue = YES;
     [self.contentView addSubview:chartView];
     
+    //质量label
     UILabel *qualityLabel = [[UILabel alloc] init];
     self.qualityLabel = qualityLabel;
     qualityLabel.textAlignment = NSTextAlignmentCenter;
@@ -65,6 +69,17 @@
     qualityLabel.textColor = [UIColor greenColor];
     [self.contentView addSubview:qualityLabel];
     
+    //时间Label
+    CGFloat w = 100;
+    UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, w, 30)];
+    self.dateLabel = dateLabel;
+    dateLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:14];
+    
+    center.x = CGRectGetMaxX(self.contentView.frame) - w;
+    center.y = chartView.center.y;
+    dateLabel.center = center;
+    
+    [self.contentView addSubview:dateLabel];
 }
 
 
@@ -97,9 +112,12 @@
     
     [self.aqiArray addObject:[NSString stringWithFormat:@"%zd",fetModel.aqi]];
     
-//    NSString *moth = [fetModel.date substringWithRange:NSMakeRange(6, 1)];
-//    NSString *day = [fetModel.date substringWithRange:NSMakeRange(8, 2)];
+    NSString *moth = [fetModel.date substringWithRange:NSMakeRange(6, 1)];
+    NSString *day = [fetModel.date substringWithRange:NSMakeRange(8, 2)];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@月%@日",moth,day];
     
+    self.chartView.textLabel.font = [UIFont systemFontOfSize:10];
+    self.chartView.textLabel.text = [NSString stringWithFormat:@"%zd",fetModel.aqi];
     
     [self.chartView strokePath];
     [self.aqiArray removeAllObjects];
@@ -112,20 +130,47 @@
     return _aqiArray;
 }
 
+#pragma mark - 闭合动画
 - (void)setIsCellOpen:(BOOL)isCellOpen {
     _isCellOpen = isCellOpen;
     if (isCellOpen) {
         [UIView animateWithDuration:1.0f delay:0 usingSpringWithDamping:1.0f initialSpringVelocity:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-            self.chartView.frame = CGRectMake(5, -50, 50, 50);
+            
+            self.chartView.frame = CGRectMake(0, -50, 50, 50);
+            
+            CGPoint center = self.qualityLabel.center;
+            
+            center.x = CGRectGetMaxX(self.chartView.frame) + 10;
+            
+            center.y = self.chartView.center.y;
+            
+            self.qualityLabel.center = center;
+            
             self.chartView.alpha = 0.3f;
+          
+            self.dateLabel.alpha = 0.3f;
 
         } completion:^(BOOL finished) {
             
         }];
     }else {
         [UIView animateWithDuration:1.0f animations:^{
-            self.chartView.frame = CGRectMake(5, 0, 50, 50);
+            
+            self.chartView.frame = CGRectMake(0, 0, 50, 50);
+            
+            CGPoint center = self.qualityLabel.center;
+            
+            center.x = CGRectGetMaxX(self.chartView.frame) + 10;
+            
+            center.y = self.chartView.center.y;
+            
+            self.qualityLabel.center = center;
+            
             self.chartView.alpha = 1.0f;
+            
+            self.dateLabel.alpha = 1.0f;
+            
+        
         } completion:^(BOOL finished) {
             
         }];

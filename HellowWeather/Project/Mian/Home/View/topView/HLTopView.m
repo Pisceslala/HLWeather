@@ -69,9 +69,11 @@
 - (void)setModel:(HLWeatherModel *)model {
     _model = model;
     
-    NSString *subStr = [model.temperature substringToIndex:2];
+    
+    NSString *subStr           = [model.temperature substringToIndex:2];
     
     self.temperatureLabel.text = subStr;
+    
     
     NSLog(@"%@",model.weather);
     
@@ -84,7 +86,7 @@
     
     [self airFacebook];
     self.airConditionLabel.text = [NSString stringWithFormat:@"空气质量指数:%@",model.airCondition];
-    self.progressView.progress = (model.pollutionIndex  / 100) + 0.5;
+    self.progressView.progress = (model.pollutionIndex  / 100);
 
     
     NSLog(@"%lf",model.pollutionIndex / 100);
@@ -104,6 +106,7 @@
     }
     
     self.stautsLabel.text = [NSString stringWithFormat:@"更新成功 %@发布",model.time];
+    self.statusAct.hidden = YES;
     [self performSelector:@selector(hideStatusLabel) withObject:self afterDelay:2];
 }
 
@@ -115,20 +118,26 @@
 
 - (void)weatherImageWithName:(NSString *)imageName {
     self.weatherImage.contentMode = UIViewContentModeScaleAspectFit;
-    self.weatherImage.image = [UIImage imageNamed:imageName];
+    self.weatherImage.image       = [UIImage imageNamed:imageName];
 }
 
 #pragma mark - 图文混排
 - (NSAttributedString *)attributedStringWithImage:(NSString *)imageName AppendString:(NSString *)text {
     
-    NSTextAttachment *chment = [[NSTextAttachment alloc] init];
-    chment.image = [UIImage imageNamed:imageName];
-    chment.bounds = CGRectMake(0, -2, 17, 17);
-    NSAttributedString *imageAttributed = [NSAttributedString attributedStringWithAttachment:chment];
+    NSTextAttachment *chment                  = [[NSTextAttachment alloc] init];
+    
+    chment.image                              = [UIImage imageNamed:imageName];
+    
+    chment.bounds                             = CGRectMake(0, -2, 17, 17);
+    
+    NSAttributedString *imageAttributed       = [NSAttributedString attributedStringWithAttachment:chment];
     
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithAttributedString:imageAttributed];
+    
     NSMutableAttributedString *textAttributed = [[NSMutableAttributedString alloc] initWithString:text];
+    
     [attributedText appendAttributedString:textAttributed];
+    
     return attributedText;
 }
 
@@ -136,12 +145,12 @@
 #pragma mark - get
 - (UILabel *)humidity {
     if (_humidity == nil) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(self.weatherLabel.JYD_X, CGRectGetMaxY(self.weatherLabel.frame)+5, self.weatherLabel.JYD_Width, 21)];
-        label.textColor = [UIColor whiteColor];
-        label.font = [UIFont systemFontOfSize:17];
-        label.shadowColor = [UIColor darkGrayColor];
+        UILabel *label     = [[UILabel alloc] initWithFrame:CGRectMake(self.weatherLabel.JYD_X, CGRectGetMaxY(self.weatherLabel.frame)+5, self.weatherLabel.JYD_Width, 21)];
+        label.textColor    = [UIColor whiteColor];
+        label.font         = [UIFont systemFontOfSize:17];
+        label.shadowColor  = [UIColor darkGrayColor];
         label.shadowOffset = CGSizeMake(1, 1);
-        _humidity = label;
+        _humidity          = label;
         [self addSubview:self.humidity];
     }
     return _humidity;
@@ -151,23 +160,23 @@
 
 - (UIView *)airFacebook {
     if (_airFacebook == nil) {
-        UIView *view = [[UIView alloc] initWithFrame: CGRectMake(self.humidity.JYD_X, CGRectGetMaxY(self.humidity.frame)+5, self.weatherLabel.JYD_Width, 31)];
-        view.backgroundColor = [UIColor colorWithRed:139/255.0 green:163/255.0 blue:158/255.0 alpha:0.6];
+        UIView *view             = [[UIView alloc] initWithFrame: CGRectMake(self.humidity.JYD_X, CGRectGetMaxY(self.humidity.frame)+5, self.weatherLabel.JYD_Width, 31)];
+        view.backgroundColor     = [UIColor colorWithRed:139/255.0 green:163/255.0 blue:158/255.0 alpha:0.6];
         view.layer.masksToBounds = YES;
-        view.layer.cornerRadius = 5;
-        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(3, 3, view.JYD_Width, 13)];
-        textLabel.font = [UIFont systemFontOfSize:13];
-        textLabel.textColor = [UIColor whiteColor];
-        self.airConditionLabel = textLabel;
+        view.layer.cornerRadius  = 5;
+        UILabel *textLabel       = [[UILabel alloc] initWithFrame:CGRectMake(3, 3, view.JYD_Width, 13)];
+        textLabel.font           = [UIFont systemFontOfSize:13];
+        textLabel.textColor      = [UIColor whiteColor];
+        self.airConditionLabel   = textLabel;
         [view addSubview:textLabel];
         
-        UIProgressView *pro = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+        UIProgressView *pro   = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
         pro.progressTintColor = [UIColor greenColor];
-        pro.trackTintColor = [UIColor lightGrayColor];
-        pro.frame = CGRectMake(3, CGRectGetMaxY(textLabel.frame) + 5, textLabel.JYD_Width - 6, 5);
-        self.progressView = pro;
+        pro.trackTintColor    = [UIColor lightGrayColor];
+        pro.frame             = CGRectMake(3, CGRectGetMaxY(textLabel.frame) + 5, textLabel.JYD_Width - 6, 5);
+        self.progressView     = pro;
         [view addSubview:pro];
-        _airFacebook = view;
+        _airFacebook          = view;
         [self addSubview:_airFacebook];
         
         //添加点击手势

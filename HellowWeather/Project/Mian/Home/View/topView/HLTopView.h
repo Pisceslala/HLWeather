@@ -25,4 +25,5 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *stautsLabel;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *statusAct;
 @end

@@ -46,8 +46,11 @@
 }
 
 - (void)headerViewEvent {
-    self.title_Label.text = @"Tap Here to Show";
-    
+    if (self.isOpen) {
+       self.title_Label.text = @"Tap Here to Show";
+    }else {
+        self.title_Label.text = @"Tap Here to Hide";
+    }
     __weak typeof(self)weakSelf = self;
     if ([weakSelf.delegate respondsToSelector:@selector(didClickHeaderWithTap)]) {
         [weakSelf.delegate didClickHeaderWithTap];

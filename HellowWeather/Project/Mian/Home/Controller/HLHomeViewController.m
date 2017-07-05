@@ -52,7 +52,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor blackColor];
     
     [self setupViews];
     
@@ -91,7 +91,9 @@
     
     NSDictionary *parameters = NSDictionaryOfVariableBindings(province,key,city);
     
+    self.topView.statusAct.hidden = NO;
     self.topView.stautsLabel.text = @"更新数据";
+    [self.topView.statusAct startAnimating];
     
     [[HLNetTool shareTools] GET:query parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
@@ -157,7 +159,7 @@
 - (void)changeBGImage {
     UIImageView *bg = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.view addSubview:bg];
-    bg.image = [UIImage imageNamed:@"IMG_5051"];
+    bg.image = [UIImage imageNamed:@""];
     self.image = bg.image;
 
 }

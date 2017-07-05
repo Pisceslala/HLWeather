@@ -13,7 +13,10 @@
 #import "UINavigationBar+Awesome.h"
 #import "HLBottomViewController.h"
 #import "HLAirDetailsController.h"
-@interface HLHomeViewController ()<HLTopViewDelegate>
+#import "HLPresentAnimator.h"
+#import "HLDismissAnimator.h"
+#import "HLDetailViewController.h"
+@interface HLHomeViewController ()<HLTopViewDelegate,UIScrollViewDelegate,UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, strong) UIImage *image;
 
@@ -28,6 +31,10 @@
 @property (nonatomic, strong) NSString *cityName;
 
 @property (nonatomic, strong) NSString *provinceName;
+
+@property (strong, nonatomic) UIScrollView *scrollView;
+
+@property (strong, nonatomic) UIImageView *dragView;
 
 @end
 
@@ -44,6 +51,12 @@
     self.topView.stautsLabel.JYD_Height = 13;
     
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self.bottomVC.view removeFromSuperview];
@@ -51,7 +64,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    
+    
     self.view.backgroundColor = [UIColor blackColor];
     
     [self setupViews];
@@ -63,12 +78,16 @@
 - (void)setupViews {
     
     [self changeBGImage];
+
+    
+    [self.view addSubview:self.scrollView];
+    
     //添加上半部分的View
     HLTopView *topView = [HLTopView showTopView];
     self.topView = topView;
     self.topView.delegate = self;
     topView.frame = CGRectMake(0, 0, SSScreenW, SSScreenH - 100);
-    [self.view addSubview:topView];
+    [self.scrollView addSubview:topView];
     
     //获取当天日期
     //1.获取当前时间戳
@@ -78,6 +97,16 @@
     fomatter.dateFormat = @"MMMd日";
     NSString *time = [fomatter stringFromDate:dateNow];
     self.title = time;
+    
+    UIImageView *dragup = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"up"]];
+    dragup.JYD_CenterX = self.view.JYD_CenterX;
+    dragup.JYD_CenterY = CGRectGetMaxY(self.view.frame) + 20;
+    dragup.JYD_Width = 32;
+    dragup.JYD_Height = 22;
+    self.dragView = dragup;
+    [self.scrollView addSubview:dragup];
+    
+    
 }
 #pragma mark - 加载新数据
 - (void)loadNewDataWithCity:(NSString *)cityName andProvince:(NSString *)provinceName{
@@ -106,7 +135,7 @@
         bottomVC.cityName = city;
         self.bottomVC = bottomVC;
         bottomVC.view.frame = CGRectMake(0, CGRectGetMaxY(self.topView.frame), SSScreenW, 100);
-        [self.view addSubview:bottomVC.view];
+        [self.scrollView addSubview:bottomVC.view];
 
     
         for (HLWeatherModel *weatherModel in self.dataArray) {
@@ -137,6 +166,26 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offset = scrollView.contentOffset.y;
+    if (offset > 70.0) {
+        HLDetailViewController *detailVC = [[HLDetailViewController alloc] init];
+        detailVC.transitioningDelegate = self;
+        detailVC.modalPresentationStyle = UIModalPresentationCustom;
+        detailVC.dataArray = self.dataArray;
+        [self presentViewController:detailVC animated:YES completion:nil];
+    }
+    
+
+}
+
+
+
+#pragma mark - 自定义转场动画
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    return [HLPresentAnimator new];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -159,8 +208,19 @@
 - (void)changeBGImage {
     UIImageView *bg = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.view addSubview:bg];
-    bg.image = [UIImage imageNamed:@""];
+    bg.image = [UIImage imageNamed:@"IMG_5061"];
     self.image = bg.image;
 
+}
+
+- (UIScrollView *)scrollView {
+    if (_scrollView == nil) {
+        UIScrollView *sc = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SSScreenW, SSScreenH + 63)];
+        sc.delegate = self;
+        sc.contentSize = CGSizeMake(0, self.view.JYD_Height + 64 );
+        
+        _scrollView = sc;
+    }
+    return _scrollView;
 }
 @end

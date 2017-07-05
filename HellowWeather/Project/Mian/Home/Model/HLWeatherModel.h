@@ -92,6 +92,11 @@
 @property (nonatomic, strong) NSArray *future;
 
 /**
+ 风力
+ */
+@property (nonatomic, copy) NSString *wind;
+
+/**
  更新时间
  */
 @property (nonatomic, copy) NSString *time;

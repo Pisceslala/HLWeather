@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		237F423B1F0CB66D0010A497 /* HLPresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F423A1F0CB66D0010A497 /* HLPresentAnimator.m */; };
+		237F423E1F0CC2D10010A497 /* HLDismissAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F423D1F0CC2D10010A497 /* HLDismissAnimator.m */; };
+		237F42411F0CC9080010A497 /* HLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F42401F0CC9080010A497 /* HLDetailViewController.m */; };
+		237F42461F0CD3250010A497 /* HLDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F42441F0CD3250010A497 /* HLDetailCell.m */; };
+		237F42471F0CD3250010A497 /* HLDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237F42451F0CD3250010A497 /* HLDetailCell.xib */; };
 		2398D4EB1F073ED900D7437C /* HLBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2398D4EA1F073ED900D7437C /* HLBottomView.m */; };
 		2398D4EE1F073F0500D7437C /* HLBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2398D4ED1F073F0500D7437C /* HLBottomViewController.m */; };
 		2399E02D1F0B423500C4620F /* HLAirTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2399E02C1F0B423500C4620F /* HLAirTableController.m */; };
@@ -92,6 +97,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		237F42391F0CB66D0010A497 /* HLPresentAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPresentAnimator.h; sourceTree = "<group>"; };
+		237F423A1F0CB66D0010A497 /* HLPresentAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPresentAnimator.m; sourceTree = "<group>"; };
+		237F423C1F0CC2D10010A497 /* HLDismissAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLDismissAnimator.h; sourceTree = "<group>"; };
+		237F423D1F0CC2D10010A497 /* HLDismissAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLDismissAnimator.m; sourceTree = "<group>"; };
+		237F423F1F0CC9080010A497 /* HLDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLDetailViewController.h; sourceTree = "<group>"; };
+		237F42401F0CC9080010A497 /* HLDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLDetailViewController.m; sourceTree = "<group>"; };
+		237F42431F0CD3250010A497 /* HLDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLDetailCell.h; sourceTree = "<group>"; };
+		237F42441F0CD3250010A497 /* HLDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLDetailCell.m; sourceTree = "<group>"; };
+		237F42451F0CD3250010A497 /* HLDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLDetailCell.xib; sourceTree = "<group>"; };
 		2398D4E91F073ED900D7437C /* HLBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLBottomView.h; sourceTree = "<group>"; };
 		2398D4EA1F073ED900D7437C /* HLBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLBottomView.m; sourceTree = "<group>"; };
 		2398D4EC1F073F0500D7437C /* HLBottomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLBottomViewController.h; sourceTree = "<group>"; };
@@ -242,6 +256,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		237F42381F0CB6430010A497 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				237F42391F0CB66D0010A497 /* HLPresentAnimator.h */,
+				237F423A1F0CB66D0010A497 /* HLPresentAnimator.m */,
+				237F423C1F0CC2D10010A497 /* HLDismissAnimator.h */,
+				237F423D1F0CC2D10010A497 /* HLDismissAnimator.m */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		237F42421F0CD2F30010A497 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				237F42431F0CD3250010A497 /* HLDetailCell.h */,
+				237F42441F0CD3250010A497 /* HLDetailCell.m */,
+				237F42451F0CD3250010A497 /* HLDetailCell.xib */,
+			);
+			path = CellView;
+			sourceTree = "<group>";
+		};
 		2398D4E81F073EB600D7437C /* BottomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +379,7 @@
 		23D010AD1F062470004A2601 /* Mian */ = {
 			isa = PBXGroup;
 			children = (
+				237F42381F0CB6430010A497 /* Animator */,
 				23D14B081F09E25700C22F8F /* BaseController */,
 				23D010B41F062524004A2601 /* Home */,
 				23D14B121F0A2BB100C22F8F /* AirDetails */,
@@ -380,6 +416,8 @@
 				23D010B91F0627A9004A2601 /* HLHomeViewController.m */,
 				2398D4EC1F073F0500D7437C /* HLBottomViewController.h */,
 				2398D4ED1F073F0500D7437C /* HLBottomViewController.m */,
+				237F423F1F0CC9080010A497 /* HLDetailViewController.h */,
+				237F42401F0CC9080010A497 /* HLDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -396,6 +434,7 @@
 		23D010B71F062524004A2601 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				237F42421F0CD2F30010A497 /* CellView */,
 				2398D4E81F073EB600D7437C /* BottomView */,
 				23D010C51F06382E004A2601 /* topView */,
 			);
@@ -820,6 +859,7 @@
 			files = (
 				23D010B21F062470004A2601 /* Info.plist in Resources */,
 				23D010861F062398004A2601 /* LaunchScreen.storyboard in Resources */,
+				237F42471F0CD3250010A497 /* HLDetailCell.xib in Resources */,
 				23D010831F062398004A2601 /* Assets.xcassets in Resources */,
 				23D0107E1F062398004A2601 /* Main.storyboard in Resources */,
 				23D010CD1F06455A004A2601 /* HLTopView.xib in Resources */,
@@ -920,7 +960,9 @@
 				2399E0351F0B7DA300C4620F /* HLAirCell.m in Sources */,
 				23D14B8B1F0A382900C22F8F /* ZFWave.m in Sources */,
 				2398D4EE1F073F0500D7437C /* HLBottomViewController.m in Sources */,
+				237F42411F0CC9080010A497 /* HLDetailViewController.m in Sources */,
 				23D010811F062398004A2601 /* HellowWeather.xcdatamodeld in Sources */,
+				237F423E1F0CC2D10010A497 /* HLDismissAnimator.m in Sources */,
 				23D14B921F0A3F7000C22F8F /* HLAirModel.m in Sources */,
 				23D14B841F0A382900C22F8F /* ZFLineChart.m in Sources */,
 				23D14B741F0A382900C22F8F /* ZFYAxisLine.m in Sources */,
@@ -931,6 +973,7 @@
 				23D010BA1F0627A9004A2601 /* HLHomeViewController.m in Sources */,
 				23D14B0E1F09ECA600C22F8F /* UIView+JYDFrame.m in Sources */,
 				23D14B7A1F0A382900C22F8F /* ZFBarChart.m in Sources */,
+				237F423B1F0CB66D0010A497 /* HLPresentAnimator.m in Sources */,
 				2398D4EB1F073ED900D7437C /* HLBottomView.m in Sources */,
 				23D14B751F0A382900C22F8F /* ZFCurveAttribute.m in Sources */,
 				23D14B881F0A382900C22F8F /* ZFPolygon.m in Sources */,
@@ -948,6 +991,7 @@
 				23D14B7C1F0A382900C22F8F /* ZFCirqueChart.m in Sources */,
 				23D14B821F0A382900C22F8F /* ZFCircle.m in Sources */,
 				23D14B731F0A382900C22F8F /* ZFXAxisLine.m in Sources */,
+				237F42461F0CD3250010A497 /* HLDetailCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
 #import "HLAirModel.h"
 #import <MJExtension.h>
 #import "HLAirTableController.h"
-@interface HLAirDetailsController ()
+@interface HLAirDetailsController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) HLAirTopView *topView;
 
@@ -104,10 +104,18 @@
     if (_scrollView == nil) {
         UIScrollView *sc = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         sc.bounces  = YES;
+        sc.delegate = self;
         sc.showsHorizontalScrollIndicator = NO;
         _scrollView = sc;
     }
     return _scrollView;
+}
+
+#pragma mark - scrollerViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    //CGFloat offset = scrollView.contentOffset.y;
+    
+    
 }
 
 #pragma mark - set
@@ -127,6 +135,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (void)dealloc {
     NSLog(@"HLAirDetailsController dealloc");

@@ -11,3 +11,8 @@
 @implementation HLAirModel
 
 @end
+
+@implementation HLAirFetModel
+
+
+@end

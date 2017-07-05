@@ -10,4 +10,6 @@
 
 @interface HLAirTableController : UITableViewController
 
+@property (nonatomic, strong) NSMutableArray *fetureData;
+
 @end

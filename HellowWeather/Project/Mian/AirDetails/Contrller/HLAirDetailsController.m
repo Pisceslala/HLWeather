@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
 @property (nonatomic, strong) UIScrollView *scrollView;
+
+@property (nonatomic, strong) HLAirTableController *contentVC;
 @end
 
 @implementation HLAirDetailsController
@@ -48,6 +50,10 @@
     HLAirTopView *topView = [[HLAirTopView alloc] initWithFrame:CGRectMake(0, 64, SSScreenW, 300)];
     self.topView = topView;
     [self.scrollView addSubview:topView];
+    
+    HLAirTableController *contentVC = [[HLAirTableController alloc] initWithStyle:UITableViewStylePlain];
+    self.contentVC = contentVC;
+
 
 }
 
@@ -64,7 +70,14 @@
         self.dataArray = [HLAirModel mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];
         for (HLAirModel *model in self.dataArray) {
             self.topView.model = model;
+            self.contentVC.fetureData = model.fetureData;
+            
+            self.contentVC.view.frame = CGRectMake(0, CGRectGetMaxY(self.topView.frame), SSScreenW, (model.fetureData.count * 60) + 30);
+            
+            [self.scrollView addSubview:self.contentVC.view];
         }
+        
+        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

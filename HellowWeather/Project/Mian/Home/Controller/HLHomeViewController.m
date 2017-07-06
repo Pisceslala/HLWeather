@@ -12,7 +12,6 @@
 #import "HLTopView.h"
 #import "UINavigationBar+Awesome.h"
 #import "HLBottomViewController.h"
-#import "HLAirDetailsController.h"
 #import "HLPresentAnimator.h"
 #import "HLDismissAnimator.h"
 #import "HLDetailViewController.h"
@@ -35,6 +34,7 @@
 @property (strong, nonatomic) UIScrollView *scrollView;
 
 @property (strong, nonatomic) UIImageView *dragView;
+
 
 @end
 
@@ -98,13 +98,9 @@
     NSString *time = [fomatter stringFromDate:dateNow];
     self.title = time;
     
-    UIImageView *dragup = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"up"]];
-    dragup.JYD_CenterX = self.view.JYD_CenterX;
-    dragup.JYD_CenterY = CGRectGetMaxY(self.view.frame) + 20;
-    dragup.JYD_Width = 32;
-    dragup.JYD_Height = 22;
-    self.dragView = dragup;
-    [self.scrollView addSubview:dragup];
+    //上下拉控件
+    [self setupDragView];
+    
     
     
 }
@@ -158,29 +154,27 @@
 
 #pragma mark - topViewDelegate
 - (void)didClickAirFaceBookInTopView {
-    HLAirDetailsController *vc = [[HLAirDetailsController alloc] init];
-    vc.bgImage = self.image;
-    vc.cityName = self.cityName;
-    vc.provinceName = self.provinceName;
-    vc.title = @"空气质量指数";
-    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offset = scrollView.contentOffset.y;
+   
     if (offset > 70.0) {
-        HLDetailViewController *detailVC = [[HLDetailViewController alloc] init];
-        detailVC.transitioningDelegate = self;
-        detailVC.modalPresentationStyle = UIModalPresentationCustom;
-        detailVC.dataArray = self.dataArray;
-        [self presentViewController:detailVC animated:YES completion:nil];
+        [self dragUpShowdetailFace];
     }
-    
-
 }
 
+#pragma mark - 上拉面板
+- (void)dragUpShowdetailFace {
+    HLDetailViewController *detailVC = [[HLDetailViewController alloc] init];
+    detailVC.transitioningDelegate = self;
+    detailVC.modalPresentationStyle = UIModalPresentationCustom;
+    detailVC.dataArray = self.dataArray;
+    [self presentViewController:detailVC animated:YES completion:nil];
 
+}
 
 #pragma mark - 自定义转场动画
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
@@ -222,5 +216,15 @@
         _scrollView = sc;
     }
     return _scrollView;
+}
+
+- (void)setupDragView {
+    UIImageView *dragup = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"up"]];
+    dragup.JYD_CenterX = self.view.JYD_CenterX;
+    dragup.JYD_CenterY = CGRectGetMaxY(self.view.frame) + 20;
+    dragup.JYD_Width = 32;
+    dragup.JYD_Height = 22;
+    self.dragView = dragup;
+    [self.scrollView addSubview:dragup];
 }
 @end

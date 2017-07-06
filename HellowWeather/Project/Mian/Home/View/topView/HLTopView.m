@@ -42,7 +42,6 @@
 
 @property (weak, nonatomic) UILabel *airConditionLabel;
 
-
 @end
 
 @implementation HLTopView

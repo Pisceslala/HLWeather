@@ -24,4 +24,11 @@ UIKIT_EXTERN NSString * const appkey;
 UIKIT_EXTERN NSString * const environmentQuery;
 
 UIKIT_EXTERN NSString * const environmentCitys;
+
+//图片Url
+UIKIT_EXTERN NSString * const unsplashAppKey;
+
+UIKIT_EXTERN NSString * const unsplashPhotoURL;
+
+UIKIT_EXTERN NSString * const unsplashPhotoCallBackURL;
 @end

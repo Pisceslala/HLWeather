@@ -11,7 +11,15 @@
 
 @protocol HLTopViewDelegate <NSObject>
 
+/**
+ 点击空气质量View
+ */
 - (void)didClickAirFaceBookInTopView;
+
+/**
+ 点击温度Label
+ */
+- (void)didClickTempLabelInTopView;
 
 @end
 

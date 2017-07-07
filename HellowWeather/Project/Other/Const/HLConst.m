@@ -26,3 +26,12 @@ NSString * const type = @"v1/weather/type";
 NSString * const environmentQuery = @"environment/query";
 //城市列表
 NSString * const environmentCitys = @"environment/citys";
+
+
+/************* 图 *****************/
+NSString * const unsplashAppKey = @"b0f45452f4585e80f118b4d9d40ab2d2c528959ab5aefc05110410cb630d8efb";
+
+NSString * const unsplashPhotoURL = @"https://api.unsplash.com/photos/";
+
+NSString * const unsplashPhotoCallBackURL = @"urn:ietf:wg:oauth:2.0:oob";
+

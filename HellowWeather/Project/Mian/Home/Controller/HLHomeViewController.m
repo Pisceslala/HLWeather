@@ -15,6 +15,7 @@
 #import "HLPresentAnimator.h"
 #import "HLDismissAnimator.h"
 #import "HLDetailViewController.h"
+#import "HLPhotosViewController.h"
 @interface HLHomeViewController ()<HLTopViewDelegate,UIScrollViewDelegate,UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, strong) UIImage *image;
@@ -118,6 +119,7 @@
     
     self.topView.statusAct.hidden = NO;
     self.topView.stautsLabel.text = @"更新数据";
+    self.topView.stautsLabel.textAlignment = NSTextAlignmentCenter;
     [self.topView.statusAct startAnimating];
     
     [[HLNetTool shareTools] GET:query parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -132,7 +134,10 @@
         self.bottomVC = bottomVC;
         bottomVC.view.frame = CGRectMake(0, CGRectGetMaxY(self.topView.frame), SSScreenW, 100);
         [self.scrollView addSubview:bottomVC.view];
-
+        bottomVC.view.alpha = 0;
+        [UIView animateWithDuration:1 animations:^{
+            bottomVC.view.alpha = 1.0;
+        }];
     
         for (HLWeatherModel *weatherModel in self.dataArray) {
             self.topView.model = weatherModel;
@@ -144,6 +149,8 @@
         NSLog(@"%@",error);
     }];
     
+
+
 }
 
 
@@ -154,7 +161,16 @@
 
 #pragma mark - topViewDelegate
 - (void)didClickAirFaceBookInTopView {
+    HLPhotosViewController *photoVC = [[HLPhotosViewController alloc] init];
     
+    [self.navigationController pushViewController:photoVC animated:YES];
+
+    
+}
+
+- (void)didClickTempLabelInTopView {
+    [self loadNewDataWithCity:@"广州" andProvince:@"广东省"];
+    [self.bottomVC.view removeFromSuperview];
 }
 
 #pragma mark - UIScrollViewDelegate

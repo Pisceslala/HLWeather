@@ -72,6 +72,8 @@
     NSString *subStr           = [model.temperature substringToIndex:2];
     //温度使用数字动画
     [self jumpNumber:[subStr integerValue]];
+    UITapGestureRecognizer *Ttap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didClickTempLabel)];
+    [self.temperatureLabel addGestureRecognizer:Ttap];
     
     NSLog(@"%@",model.weather);
     
@@ -81,13 +83,29 @@
     
     //湿度
     self.humidity.attributedText = [self attributedStringWithImage:@"湿度" AppendString:model.humidity];
-    
+    self.humidity.font = [UIFont fontWithName:@"KohinoorTelugu-Regular" size:17];
+    //空气质量
     [self airFacebook];
     self.airConditionLabel.text = [NSString stringWithFormat:@"空气质量指数:%@",model.airCondition];
     self.progressView.progress = (model.pollutionIndex  / 100);
-
     
-    NSLog(@"%lf",model.pollutionIndex / 100);
+    //天气大图
+    [self setupWeatherImage:model];
+    
+    //更新状态
+    self.stautsLabel.text = [NSString stringWithFormat:@"更新成功 %@发布",model.time];
+    self.statusAct.hidden = YES;
+    [self performSelector:@selector(hideStatusLabel) withObject:self afterDelay:2];
+}
+
+- (void)hideStatusLabel {
+    [UIView animateWithDuration:0.5 animations:^{
+        self.stautsLabel.JYD_Height = 0;
+    }];
+}
+
+#pragma mark - 设置天气大图
+- (void)setupWeatherImage:(HLWeatherModel *)model {
     //天气大图
     if ([model.weather isEqualToString:@"晴"]) {
         [self weatherImageWithName:@"晴"];
@@ -101,17 +119,9 @@
         [self weatherImageWithName:@"阵雨"];
     }else if ([model.weather isEqualToString:@"雷雨"] || [model.weather isEqualToString:@"零散雷雨"]) {
         [self weatherImageWithName:@"雷阵雨"];
+    }else if ([model.weather isEqualToString:@"小到中雨"]) {
+        [self weatherImageWithName:@"中雨"];
     }
-    
-    self.stautsLabel.text = [NSString stringWithFormat:@"更新成功 %@发布",model.time];
-    self.statusAct.hidden = YES;
-    [self performSelector:@selector(hideStatusLabel) withObject:self afterDelay:2];
-}
-
-- (void)hideStatusLabel {
-    [UIView animateWithDuration:0.2 animations:^{
-        self.stautsLabel.JYD_Height = 0;
-    }];
 }
 
 - (void)weatherImageWithName:(NSString *)imageName {
@@ -158,7 +168,7 @@
 
 - (UIView *)airFacebook {
     if (_airFacebook == nil) {
-        UIView *view             = [[UIView alloc] initWithFrame: CGRectMake(self.humidity.JYD_X, CGRectGetMaxY(self.humidity.frame)+5, self.weatherLabel.JYD_Width, 31)];
+        UIView *view             = [[UIView alloc] initWithFrame: CGRectMake(self.humidity.JYD_X, CGRectGetMaxY(self.humidity.frame)+5, self.weatherLabel.JYD_Width - 40, 31)];
         view.backgroundColor     = [UIColor colorWithRed:139/255.0 green:163/255.0 blue:158/255.0 alpha:0.6];
         view.layer.masksToBounds = YES;
         view.layer.cornerRadius  = 5;
@@ -183,8 +193,11 @@
         
     }
     return _airFacebook;
+
 }
 
+
+#pragma mark - 执行代理
 - (void)airFacebookDidClick {
     __weak typeof(self)weakSelf = self;
     if ([weakSelf.delegate respondsToSelector:@selector(didClickAirFaceBookInTopView)]) {
@@ -192,7 +205,16 @@
     }
 }
 
+- (void)didClickTempLabel {
+    __weak typeof(self)weakSelf = self;
+    if ([weakSelf.delegate respondsToSelector:@selector(didClickTempLabelInTopView)]) {
+        [weakSelf.delegate didClickTempLabelInTopView];
+    }
+}
+
+#pragma mark - 数字动画
 - (void)jumpNumber:(NSInteger)temp {
+    
     __block int startNum = 0;
     
     //开启队列
@@ -206,6 +228,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if (startNum < temp) {
                 self.temperatureLabel.text = [NSString stringWithFormat:@"%zd",startNum];
+
                 startNum ++;
             }else {
                 dispatch_source_cancel(timer);
@@ -217,6 +240,7 @@
         
     });
     dispatch_resume(timer);
+
 }
 
 @end

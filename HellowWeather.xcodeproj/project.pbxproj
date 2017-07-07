@@ -12,6 +12,10 @@
 		237F42411F0CC9080010A497 /* HLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F42401F0CC9080010A497 /* HLDetailViewController.m */; };
 		237F42461F0CD3250010A497 /* HLDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F42441F0CD3250010A497 /* HLDetailCell.m */; };
 		237F42471F0CD3250010A497 /* HLDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237F42451F0CD3250010A497 /* HLDetailCell.xib */; };
+		2391372E1F0F6DF300BA50AB /* HLPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2391372B1F0F6DF300BA50AB /* HLPhotosViewController.m */; };
+		239137311F0F6E1300BA50AB /* HLPhotosModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 239137301F0F6E1300BA50AB /* HLPhotosModel.m */; };
+		239137351F0F733C00BA50AB /* HLPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 239137331F0F733C00BA50AB /* HLPhotoCell.m */; };
+		239137361F0F733C00BA50AB /* HLPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 239137341F0F733C00BA50AB /* HLPhotoCell.xib */; };
 		2398D4EB1F073ED900D7437C /* HLBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2398D4EA1F073ED900D7437C /* HLBottomView.m */; };
 		2398D4EE1F073F0500D7437C /* HLBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2398D4ED1F073F0500D7437C /* HLBottomViewController.m */; };
 		23D0107E1F062398004A2601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D0107C1F062398004A2601 /* Main.storyboard */; };
@@ -96,6 +100,13 @@
 		237F42431F0CD3250010A497 /* HLDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLDetailCell.h; sourceTree = "<group>"; };
 		237F42441F0CD3250010A497 /* HLDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLDetailCell.m; sourceTree = "<group>"; };
 		237F42451F0CD3250010A497 /* HLDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLDetailCell.xib; sourceTree = "<group>"; };
+		2391372A1F0F6DF300BA50AB /* HLPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPhotosViewController.h; sourceTree = "<group>"; };
+		2391372B1F0F6DF300BA50AB /* HLPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPhotosViewController.m; sourceTree = "<group>"; };
+		2391372F1F0F6E1300BA50AB /* HLPhotosModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPhotosModel.h; sourceTree = "<group>"; };
+		239137301F0F6E1300BA50AB /* HLPhotosModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPhotosModel.m; sourceTree = "<group>"; };
+		239137321F0F733C00BA50AB /* HLPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPhotoCell.h; sourceTree = "<group>"; };
+		239137331F0F733C00BA50AB /* HLPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPhotoCell.m; sourceTree = "<group>"; };
+		239137341F0F733C00BA50AB /* HLPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLPhotoCell.xib; sourceTree = "<group>"; };
 		2398D4E91F073ED900D7437C /* HLBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLBottomView.h; sourceTree = "<group>"; };
 		2398D4EA1F073ED900D7437C /* HLBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLBottomView.m; sourceTree = "<group>"; };
 		2398D4EC1F073F0500D7437C /* HLBottomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLBottomViewController.h; sourceTree = "<group>"; };
@@ -255,6 +266,44 @@
 			path = CellView;
 			sourceTree = "<group>";
 		};
+		239137251F0F5D5A00BA50AB /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				239137291F0F6DF300BA50AB /* Controller */,
+				2391372C1F0F6DF300BA50AB /* Model */,
+				2391372D1F0F6DF300BA50AB /* View */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		239137291F0F6DF300BA50AB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2391372A1F0F6DF300BA50AB /* HLPhotosViewController.h */,
+				2391372B1F0F6DF300BA50AB /* HLPhotosViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2391372C1F0F6DF300BA50AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2391372F1F0F6E1300BA50AB /* HLPhotosModel.h */,
+				239137301F0F6E1300BA50AB /* HLPhotosModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2391372D1F0F6DF300BA50AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				239137321F0F733C00BA50AB /* HLPhotoCell.h */,
+				239137331F0F733C00BA50AB /* HLPhotoCell.m */,
+				239137341F0F733C00BA50AB /* HLPhotoCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2398D4E81F073EB600D7437C /* BottomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +409,7 @@
 				237F42381F0CB6430010A497 /* Animator */,
 				23D14B081F09E25700C22F8F /* BaseController */,
 				23D010B41F062524004A2601 /* Home */,
+				239137251F0F5D5A00BA50AB /* Photos */,
 			);
 			path = Mian;
 			sourceTree = "<group>";
@@ -801,6 +851,7 @@
 			files = (
 				23D010B21F062470004A2601 /* Info.plist in Resources */,
 				23D010861F062398004A2601 /* LaunchScreen.storyboard in Resources */,
+				239137361F0F733C00BA50AB /* HLPhotoCell.xib in Resources */,
 				237F42471F0CD3250010A497 /* HLDetailCell.xib in Resources */,
 				23D010831F062398004A2601 /* Assets.xcassets in Resources */,
 				23D0107E1F062398004A2601 /* Main.storyboard in Resources */,
@@ -884,6 +935,7 @@
 				23D14B771F0A382900C22F8F /* ZFConst.m in Sources */,
 				23D14B761F0A382900C22F8F /* ZFGradientAttribute.m in Sources */,
 				23D14B0B1F09E27A00C22F8F /* HLNavigationController.m in Sources */,
+				239137311F0F6E1300BA50AB /* HLPhotosModel.m in Sources */,
 				23D14B8C1F0A382900C22F8F /* ZFWaveChart.m in Sources */,
 				23D14B781F0A382900C22F8F /* ZFMethod.m in Sources */,
 				23D14B811F0A382900C22F8F /* ZFHorizontalBarChart.m in Sources */,
@@ -893,6 +945,7 @@
 				23D14B7F1F0A382900C22F8F /* ZFHorizontalAxis.m in Sources */,
 				23D14B711F0A382900C22F8F /* ZFLabel.m in Sources */,
 				23D14B111F09ECB100C22F8F /* NSDate+DateExtension.m in Sources */,
+				2391372E1F0F6DF300BA50AB /* HLPhotosViewController.m in Sources */,
 				23D14B6C1F0A382900C22F8F /* NSNumber+Zirkfied.m in Sources */,
 				23D14B851F0A382900C22F8F /* ZFPie.m in Sources */,
 				23D14B861F0A382900C22F8F /* ZFPieChart.m in Sources */,
@@ -913,6 +966,7 @@
 				23D14B7A1F0A382900C22F8F /* ZFBarChart.m in Sources */,
 				237F423B1F0CB66D0010A497 /* HLPresentAnimator.m in Sources */,
 				2398D4EB1F073ED900D7437C /* HLBottomView.m in Sources */,
+				239137351F0F733C00BA50AB /* HLPhotoCell.m in Sources */,
 				23D14B751F0A382900C22F8F /* ZFCurveAttribute.m in Sources */,
 				23D14B881F0A382900C22F8F /* ZFPolygon.m in Sources */,
 				23D14B7E1F0A382900C22F8F /* ZFGenericChart.m in Sources */,

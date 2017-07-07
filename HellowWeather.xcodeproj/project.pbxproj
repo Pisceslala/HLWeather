@@ -66,7 +66,6 @@
 		23D14B8A1F0A382900C22F8F /* ZFRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B661F0A382900C22F8F /* ZFRadarChart.m */; };
 		23D14B8B1F0A382900C22F8F /* ZFWave.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B691F0A382900C22F8F /* ZFWave.m */; };
 		23D14B8C1F0A382900C22F8F /* ZFWaveChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D14B6B1F0A382900C22F8F /* ZFWaveChart.m */; };
-		23E5855E1F0E48BB004CDDFC /* HLAddNumbTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E5855D1F0E48BB004CDDFC /* HLAddNumbTools.m */; };
 		ED4257992E9DAB34E62C60BF /* libPods-HellowWeather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F2DE5D33FA81EE51283BD2 /* libPods-HellowWeather.a */; };
 /* End PBXBuildFile section */
 
@@ -204,8 +203,6 @@
 		23D14B691F0A382900C22F8F /* ZFWave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFWave.m; sourceTree = "<group>"; };
 		23D14B6A1F0A382900C22F8F /* ZFWaveChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFWaveChart.h; sourceTree = "<group>"; };
 		23D14B6B1F0A382900C22F8F /* ZFWaveChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFWaveChart.m; sourceTree = "<group>"; };
-		23E5855C1F0E48BB004CDDFC /* HLAddNumbTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLAddNumbTools.h; sourceTree = "<group>"; };
-		23E5855D1F0E48BB004CDDFC /* HLAddNumbTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAddNumbTools.m; sourceTree = "<group>"; };
 		87F2DE5D33FA81EE51283BD2 /* libPods-HellowWeather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HellowWeather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9075F4E20991CD80EA66CFCC /* Pods-HellowWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HellowWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HellowWeather/Pods-HellowWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		96FF74B50F84F2940ED27F4B /* Pods-HellowWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HellowWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-HellowWeather/Pods-HellowWeather.release.xcconfig"; sourceTree = "<group>"; };
@@ -670,8 +667,6 @@
 		23E5855B1F0E4877004CDDFC /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				23E5855C1F0E48BB004CDDFC /* HLAddNumbTools.h */,
-				23E5855D1F0E48BB004CDDFC /* HLAddNumbTools.m */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -885,7 +880,6 @@
 				23D010CB1F06429B004A2601 /* HLWeatherModel.m in Sources */,
 				23D14B801F0A382900C22F8F /* ZFHorizontalBar.m in Sources */,
 				23D14B721F0A382900C22F8F /* ZFPopoverLabel.m in Sources */,
-				23E5855E1F0E48BB004CDDFC /* HLAddNumbTools.m in Sources */,
 				23D14B6D1F0A382900C22F8F /* NSString+Zirkfied.m in Sources */,
 				23D14B771F0A382900C22F8F /* ZFConst.m in Sources */,
 				23D14B761F0A382900C22F8F /* ZFGradientAttribute.m in Sources */,

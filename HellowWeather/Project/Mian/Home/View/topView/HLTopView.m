@@ -70,9 +70,8 @@
     
     
     NSString *subStr           = [model.temperature substringToIndex:2];
-    
-    self.temperatureLabel.text = subStr;
-    
+    //温度使用数字动画
+    [self jumpNumber:[subStr integerValue]];
     
     NSLog(@"%@",model.weather);
     
@@ -144,7 +143,7 @@
 #pragma mark - get
 - (UILabel *)humidity {
     if (_humidity == nil) {
-        UILabel *label     = [[UILabel alloc] initWithFrame:CGRectMake(self.weatherLabel.JYD_X, CGRectGetMaxY(self.weatherLabel.frame)+5, self.weatherLabel.JYD_Width, 21)];
+        UILabel *label     = [[UILabel alloc] initWithFrame:CGRectMake(self.weatherLabel.JYD_X, CGRectGetMaxY(self.weatherLabel.frame)+5, self.weatherLabel.JYD_Width , 21)];
         label.textColor    = [UIColor whiteColor];
         label.font         = [UIFont systemFontOfSize:17];
         label.shadowColor  = [UIColor darkGrayColor];
@@ -191,6 +190,33 @@
     if ([weakSelf.delegate respondsToSelector:@selector(didClickAirFaceBookInTopView)]) {
         [weakSelf.delegate didClickAirFaceBookInTopView];
     }
+}
+
+- (void)jumpNumber:(NSInteger)temp {
+    __block int startNum = 0;
+    
+    //开启队列
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    //定时器模式 事件源
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), 0.03 * NSEC_PER_SEC, 0);
+    dispatch_source_set_event_handler(timer, ^{
+        
+        //主线程刷新UI
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (startNum < temp) {
+                self.temperatureLabel.text = [NSString stringWithFormat:@"%zd",startNum];
+                startNum ++;
+            }else {
+                dispatch_source_cancel(timer);
+                self.temperatureLabel.text = [NSString stringWithFormat:@"%zd",temp];
+                
+            }
+
+        });
+        
+    });
+    dispatch_resume(timer);
 }
 
 @end

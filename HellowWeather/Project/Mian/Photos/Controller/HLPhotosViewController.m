@@ -10,6 +10,7 @@
 #import <AFNetworking.h>
 #import "HLPhotosModel.h"
 #import <MJExtension.h>
+#import "HLPhotoCell.h"
 @interface HLPhotosViewController ()
 
 @property (strong, nonatomic) NSMutableArray *dataArray;
@@ -19,15 +20,17 @@
 @implementation HLPhotosViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self loadNewDataFromNet];
+    
     self.navigationController.navigationBar.hidden = YES;
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-   
+    [self loadNewDataFromNet];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HLPhotoCell class]) bundle:nil] forCellReuseIdentifier:@"photoCellFlag"];
+    self.tableView.rowHeight = 220;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)loadNewDataFromNet {
@@ -39,12 +42,12 @@
     
     [manager GET:unsplashPhotoURL parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        
-        for (NSDictionary *dict in responseObject) {
-            HLPhotosModel *model = [HLPhotosModel mj_objectWithKeyValues:dict];
+        for (int i = 0; i < 10; i++) {
+            HLPhotosModel *model = [HLPhotosModel mj_objectWithKeyValues:responseObject[i][@"urls"]];
             [self.dataArray addObject:model];
         }
         
+        [self.tableView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
@@ -64,15 +67,17 @@
     return self.dataArray.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    HLPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"photoCellFlag" forIndexPath:indexPath];
     
-    // Configure the cell...
+    HLPhotosModel *model = self.dataArray[indexPath.row];
+    
+    cell.model = model;
     
     return cell;
 }
-*/
+
 
 #pragma mark - get
 - (NSMutableArray *)dataArray {
@@ -81,5 +86,8 @@
     }
     return _dataArray;
 }
+
+
+    
 
 @end

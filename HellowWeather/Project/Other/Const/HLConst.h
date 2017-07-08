@@ -31,4 +31,7 @@ UIKIT_EXTERN NSString * const unsplashAppKey;
 UIKIT_EXTERN NSString * const unsplashPhotoURL;
 
 UIKIT_EXTERN NSString * const unsplashPhotoCallBackURL;
+
+//图片缓存
+UIKIT_EXTERN NSString * const PhotoCache;
 @end

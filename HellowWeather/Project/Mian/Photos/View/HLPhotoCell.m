@@ -10,7 +10,7 @@
 #import <UIImageView+WebCache.h>
 #import "HLPhotosModel.h"
 @interface HLPhotoCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+
 
 @end
 
@@ -39,10 +39,11 @@
             NSLog(@"%@",error);
         }
     }];
+    
 }
 
 - (void)setFrame:(CGRect)frame {
-    
+    frame.origin.y += 5;
     frame.origin.x += 5;
     frame.size.height -= 5;
     frame.size.width -= 10;

@@ -19,6 +19,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GKA-ib-13c">
                         <rect key="frame" x="0.0" y="0.0" width="296" height="165.5"/>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
                 </subviews>
                 <constraints>
@@ -29,7 +30,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="iconView" destination="GKA-ib-13c" id="qAV-yX-HrB"/>
+                <outlet property="iconView" destination="GKA-ib-13c" id="ddc-Rl-lRM"/>
             </connections>
             <point key="canvasLocation" x="-220" y="127"/>
         </tableViewCell>

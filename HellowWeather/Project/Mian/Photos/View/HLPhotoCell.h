@@ -10,4 +10,7 @@
 @class HLPhotosModel;
 @interface HLPhotoCell : UITableViewCell
 @property (strong, nonatomic) HLPhotosModel *model;
+
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+
 @end

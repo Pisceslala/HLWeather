@@ -11,13 +11,17 @@
 #import "HLPhotosModel.h"
 #import <MJExtension.h>
 #import "HLPhotoCell.h"
+#import <UIImageView+WebCache.h>
+#import "HLPicBrowserViewController.h"
 @interface HLPhotosViewController ()
 
 @property (strong, nonatomic) NSMutableArray *dataArray;
 
 @property (strong, nonatomic) NSMutableArray *historyArray;
 
-@property (assign, nonatomic) NSInteger pageCount;
+@property (assign, nonatomic) NSInteger newCount;
+
+@property (assign, nonatomic) NSInteger oldCunt;
 @end
 
 @implementation HLPhotosViewController
@@ -30,9 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.pageCount = 1;
-    [self loadNewDataFromNet];
-        self.tableView.rowHeight = 220;
+
+    self.tableView.rowHeight = 220;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     MJRefreshBackNormalFooter *footView = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreOldestData)];
@@ -46,8 +49,36 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HLPhotoCell class]) bundle:nil] forCellReuseIdentifier:@"photoCellFlag"];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    //查看缓存是否有值
+    if ([[[PINCache sharedCache] objectForKey:@"newCount"] integerValue]) {
+        self.newCount = [[[PINCache sharedCache] objectForKey:@"newCount"] integerValue];
+    }else {
+        self.newCount = 0;
+    }
+    
+    if ([[[PINCache sharedCache] objectForKey:@"oldCount"] integerValue]) {
+        self.oldCunt = [[[PINCache sharedCache] objectForKey:@"oldCount"] integerValue];
+    }else {
+        self.oldCunt = 0;
+    }
+
+    
+    
+    [self loadDataFromCache];
 
 
+}
+#pragma mark - 从缓存加载
+- (void)loadDataFromCache {
+    NSMutableArray *cacheData = [[PINCache sharedCache] objectForKey:PhotoCache];
+    
+    if (cacheData.count == 0) {
+        [self loadNewDataFromNet];
+    }else {
+        self.dataArray = [HLPhotosModel mj_objectArrayWithKeyValuesArray:cacheData];
+        [self.tableView reloadData];
+    }
 }
 #pragma mark - 加载数据
 - (void)loadNewDataFromNet {
@@ -65,7 +96,6 @@
         for (NSDictionary *dict in responseObject) {
             [imageCount addObject:dict];
         }
-        SDLOG(@"%zd",imageCount.count);
         
         for (int i = 0; i < imageCount.count; i++) {
             HLPhotosModel *model = [HLPhotosModel mj_objectWithKeyValues:responseObject[i][@"urls"]];
@@ -74,7 +104,9 @@
         
         [self.tableView reloadData];
         
-        
+        //缓存
+        NSArray *cacheArray = [HLPhotosModel mj_keyValuesArrayWithObjectArray:self.dataArray];
+        [[PINCache sharedCache] setObject:cacheArray forKey:PhotoCache];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
@@ -94,13 +126,26 @@
     [self.tableView.mj_header beginRefreshing];
 }
 
+
+/**
+ 加载新的数据和旧的数据
+
+ @param dataStatus 加载数据类型
+ */
 - (void)loadMoreData:(NSString *)dataStatus {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     //参数
-   
     NSString *client_id = unsplashAppKey;
-    NSString *page = [NSString stringWithFormat:@"%zd",++self.pageCount];
+    NSString *page = @"";
+    
+    //判断是加载新的图片还是旧的图片页码
+    if ([dataStatus isEqualToString:@"popular"]) {
+        page = [NSString stringWithFormat:@"%zd",++self.newCount];
+    }else {
+        page = [NSString stringWithFormat:@"%zd",++self.oldCunt];
+    }
+    
     NSString *per_page = @"10";
     NSString *order_by = dataStatus;
     NSDictionary *parm = NSDictionaryOfVariableBindings(client_id,page,per_page,order_by);
@@ -129,8 +174,13 @@
         }else {
             [self.dataArray addObjectsFromArray:newArray];
         }
-        
         [self.tableView reloadData];
+        
+        //缓存处理
+        NSArray *cacheArray = [HLPhotosModel mj_keyValuesArrayWithObjectArray:self.dataArray];
+        [[PINCache sharedCache] setObject:cacheArray forKey:PhotoCache];
+        [[PINCache sharedCache] setObject:[NSString stringWithFormat:@"%zd",self.newCount] forKey:@"newCount"];
+        [[PINCache sharedCache] setObject:[NSString stringWithFormat:@"%zd",self.oldCunt] forKey:@"oldCount"];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         SDLOG(@"%@",error);
@@ -147,14 +197,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HLPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"photoCellFlag" forIndexPath:indexPath];
-    
+   
+   
     HLPhotosModel *model = self.dataArray[indexPath.row];
-    
+        
     cell.model = model;
     
     return cell;
 }
 
+#pragma mark - tableDelegate 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    HLPhotosModel *mode = self.dataArray[indexPath.row];
+    HLPicBrowserViewController *picVC = [[HLPicBrowserViewController alloc] init];
+    picVC.regularURL = mode.regular;
+    picVC.fullURL = mode.full;
+    [self.navigationController pushViewController:picVC animated:YES];
+}
 
 #pragma mark - get
 - (NSMutableArray *)dataArray {
@@ -171,6 +230,10 @@
     return _historyArray;
 }
 
+- (void)dealloc {
+    SDLOG(@"die");
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

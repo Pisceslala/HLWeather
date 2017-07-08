@@ -38,3 +38,7 @@ NSString * const unsplashPhotoCallBackURL = @"urn:ietf:wg:oauth:2.0:oob";
 
 //图片缓存
 NSString * const PhotoCache = @"PhotoCache";
+
+
+//万年历URL
+NSString * const calendarURL = @"http://apicloud.mob.com/appstore/calendar/day";

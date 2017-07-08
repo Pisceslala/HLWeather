@@ -34,4 +34,6 @@ UIKIT_EXTERN NSString * const unsplashPhotoCallBackURL;
 
 //图片缓存
 UIKIT_EXTERN NSString * const PhotoCache;
+
+UIKIT_EXTERN NSString * const calendarURL;
 @end

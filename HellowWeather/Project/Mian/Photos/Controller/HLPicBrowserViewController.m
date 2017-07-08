@@ -66,7 +66,7 @@
     if (press.state == UIGestureRecognizerStateBegan) {
         if (self.isScale) {
             [AlertControllerTool alertShootActionAtTitle:@"保存图片" message:@"是否将图片保存至相册" sureTitle:@"确定" cancelTitle:@"取消" confirmHandler:^(UIAlertAction *action) {
-                
+                //保存图片到相册
                 UIImageWriteToSavedPhotosAlbum(self.imageV.image, self, @selector(image:didFinshSavingWithError:contextInfo:),nil);
                 
             } cancelHandler:^(UIAlertAction *action) {

@@ -74,6 +74,8 @@
 		23F7021B1F10CD75008E9A4B /* UIImage+HLUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7021A1F10CD75008E9A4B /* UIImage+HLUIImage.m */; };
 		23F7021F1F10D3A0008E9A4B /* AlertControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F7021E1F10D3A0008E9A4B /* AlertControllerTool.m */; };
 		23F702231F10D3C8008E9A4B /* ClearCacheTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F702221F10D3C8008E9A4B /* ClearCacheTool.m */; };
+		23F702261F10E60E008E9A4B /* HLCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F702251F10E60E008E9A4B /* HLCalendarViewController.m */; };
+		23F702291F10E630008E9A4B /* HLCalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F702281F10E630008E9A4B /* HLCalendarModel.m */; };
 		ED4257992E9DAB34E62C60BF /* libPods-HellowWeather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87F2DE5D33FA81EE51283BD2 /* libPods-HellowWeather.a */; };
 /* End PBXBuildFile section */
 
@@ -226,6 +228,10 @@
 		23F7021E1F10D3A0008E9A4B /* AlertControllerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertControllerTool.m; sourceTree = "<group>"; };
 		23F702211F10D3C8008E9A4B /* ClearCacheTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearCacheTool.h; sourceTree = "<group>"; };
 		23F702221F10D3C8008E9A4B /* ClearCacheTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearCacheTool.m; sourceTree = "<group>"; };
+		23F702241F10E60E008E9A4B /* HLCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLCalendarViewController.h; sourceTree = "<group>"; };
+		23F702251F10E60E008E9A4B /* HLCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLCalendarViewController.m; sourceTree = "<group>"; };
+		23F702271F10E630008E9A4B /* HLCalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLCalendarModel.h; sourceTree = "<group>"; };
+		23F702281F10E630008E9A4B /* HLCalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLCalendarModel.m; sourceTree = "<group>"; };
 		87F2DE5D33FA81EE51283BD2 /* libPods-HellowWeather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HellowWeather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9075F4E20991CD80EA66CFCC /* Pods-HellowWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HellowWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HellowWeather/Pods-HellowWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		96FF74B50F84F2940ED27F4B /* Pods-HellowWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HellowWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-HellowWeather/Pods-HellowWeather.release.xcconfig"; sourceTree = "<group>"; };
@@ -459,6 +465,8 @@
 				2398D4ED1F073F0500D7437C /* HLBottomViewController.m */,
 				237F423F1F0CC9080010A497 /* HLDetailViewController.h */,
 				237F42401F0CC9080010A497 /* HLDetailViewController.m */,
+				23F702241F10E60E008E9A4B /* HLCalendarViewController.h */,
+				23F702251F10E60E008E9A4B /* HLCalendarViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -468,6 +476,8 @@
 			children = (
 				23D010C91F06429B004A2601 /* HLWeatherModel.h */,
 				23D010CA1F06429B004A2601 /* HLWeatherModel.m */,
+				23F702271F10E630008E9A4B /* HLCalendarModel.h */,
+				23F702281F10E630008E9A4B /* HLCalendarModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -979,6 +989,7 @@
 				23D14B791F0A382900C22F8F /* ZFBar.m in Sources */,
 				23D14B7B1F0A382900C22F8F /* ZFCirque.m in Sources */,
 				23D14B6E1F0A382900C22F8F /* UIBezierPath+Zirkfied.m in Sources */,
+				23F702291F10E630008E9A4B /* HLCalendarModel.m in Sources */,
 				23D14B7F1F0A382900C22F8F /* ZFHorizontalAxis.m in Sources */,
 				23D14B711F0A382900C22F8F /* ZFLabel.m in Sources */,
 				23D14B111F09ECB100C22F8F /* NSDate+DateExtension.m in Sources */,
@@ -1016,6 +1027,7 @@
 				23D14B8A1F0A382900C22F8F /* ZFRadarChart.m in Sources */,
 				23F702231F10D3C8008E9A4B /* ClearCacheTool.m in Sources */,
 				23D14B071F09DDD600C22F8F /* UINavigationBar+Awesome.m in Sources */,
+				23F702261F10E60E008E9A4B /* HLCalendarViewController.m in Sources */,
 				23D010C01F0631E9004A2601 /* HLNetTool.m in Sources */,
 				23D14B7D1F0A382900C22F8F /* ZFGenericAxis.m in Sources */,
 				23D14B7C1F0A382900C22F8F /* ZFCirqueChart.m in Sources */,

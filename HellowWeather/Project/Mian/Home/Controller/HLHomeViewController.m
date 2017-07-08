@@ -16,6 +16,7 @@
 #import "HLDismissAnimator.h"
 #import "HLDetailViewController.h"
 #import "HLPhotosViewController.h"
+#import "HLCalendarViewController.h"
 @interface HLHomeViewController ()<HLTopViewDelegate,UIScrollViewDelegate,UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, strong) UIImage *image;
@@ -43,24 +44,29 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    self.navigationController.navigationBar.hidden = NO;
+    
     [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
     // 设置一个空的 shadowImage 来实现
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     
+    
+
     //根据城市名称加载
     [self loadNewDataWithCity:@"广州" andProvince:@"广东省"];
     self.topView.stautsLabel.JYD_Height = 13;
+    
     
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [self.bottomVC.view removeFromSuperview];
 }
 
 - (void)viewDidLoad {
@@ -74,6 +80,17 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStylePlain target:self action:@selector(listBarClick)];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleClickShow)];
+    [self.navigationController.navigationBar addGestureRecognizer:tap];
+    
+}
+
+- (void)titleClickShow {
+    HLCalendarViewController *vc = [[HLCalendarViewController alloc] init];
+    vc.view.JYD_X = 0;
+    vc.view.JYD_Y = CGRectGetMaxY(self.topView.frame);
+    vc.view.JYD_Width = SSScreenW;
+    vc.view.JYD_Height = 240;
 }
 
 - (void)setupViews {
@@ -102,7 +119,7 @@
     //上下拉控件
     [self setupDragView];
     
-    
+
     
 }
 #pragma mark - 加载新数据
@@ -134,11 +151,10 @@
         self.bottomVC = bottomVC;
         bottomVC.view.frame = CGRectMake(0, CGRectGetMaxY(self.topView.frame), SSScreenW, 100);
         [self.scrollView addSubview:bottomVC.view];
-        bottomVC.view.alpha = 0;
-        [UIView animateWithDuration:1 animations:^{
-            bottomVC.view.alpha = 1.0;
-        }];
-    
+        bottomVC.view.alpha = 1;
+        
+        
+        
         for (HLWeatherModel *weatherModel in self.dataArray) {
             self.topView.model = weatherModel;
         }
@@ -149,6 +165,7 @@
         NSLog(@"%@",error);
     }];
     
+
 
 
 }
@@ -164,6 +181,8 @@
     HLPhotosViewController *photoVC = [[HLPhotosViewController alloc] init];
     
     [self.navigationController pushViewController:photoVC animated:YES];
+    
+    [self.bottomVC.view removeFromSuperview];
 
     
 }

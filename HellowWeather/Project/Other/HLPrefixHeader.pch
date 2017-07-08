@@ -24,3 +24,14 @@
 #import "UIView+JYDFrame.h"
 #import "UINavigationBar+Awesome.h"
 #endif /* HLPrefixHeader_pch */
+
+// 7.自定义Log
+#ifdef DEBUG
+
+#define SDLOG(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define SDLOG(...)
+
+#endif

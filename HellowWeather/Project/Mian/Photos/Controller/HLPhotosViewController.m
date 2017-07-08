@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) NSMutableArray *dataArray;
 
+@property (strong, nonatomic) NSMutableArray *historyArray;
+
 @end
 
 @implementation HLPhotosViewController
@@ -38,16 +40,25 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     NSString *client_id = unsplashAppKey;
-    NSDictionary *parm = NSDictionaryOfVariableBindings(client_id);
+    NSString *page = @"2";
+    NSString *per_page = @"20";
+    NSDictionary *parm = NSDictionaryOfVariableBindings(client_id,page,per_page);
     
     [manager GET:unsplashPhotoURL parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        for (int i = 0; i < 10; i++) {
+        NSMutableArray *imageCount = [NSMutableArray array];
+        for (NSDictionary *dict in responseObject) {
+            [imageCount addObject:dict];
+        }
+        
+        for (int i = 0; i < imageCount.count; i++) {
             HLPhotosModel *model = [HLPhotosModel mj_objectWithKeyValues:responseObject[i][@"urls"]];
             [self.dataArray addObject:model];
         }
         
         [self.tableView reloadData];
+        
+        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
@@ -55,13 +66,7 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
+#pragma mark - 数据源
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     return self.dataArray.count;
@@ -87,7 +92,17 @@
     return _dataArray;
 }
 
+- (NSMutableArray *)historyArray {
+    if (_historyArray == nil) {
+        _historyArray = [NSMutableArray array];
+    }
+    return _historyArray;
+}
 
-    
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

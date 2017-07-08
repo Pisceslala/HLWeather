@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) NSMutableArray *historyArray;
 
+@property (assign, nonatomic) NSInteger pageCount;
 @end
 
 @implementation HLPhotosViewController
@@ -29,18 +30,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.pageCount = 1;
     [self loadNewDataFromNet];
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HLPhotoCell class]) bundle:nil] forCellReuseIdentifier:@"photoCellFlag"];
-    self.tableView.rowHeight = 220;
+        self.tableView.rowHeight = 220;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-}
 
+    MJRefreshBackNormalFooter *footView = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreOldestData)];
+    [footView setTintColor:[UIColor blackColor]];
+    self.tableView.mj_footer = footView;
+   
+    MJRefreshStateHeader *headRef = [MJRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadMoreNewData)];
+    
+    self.tableView.mj_header = headRef;
+    
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HLPhotoCell class]) bundle:nil] forCellReuseIdentifier:@"photoCellFlag"];
+    
+
+
+}
+#pragma mark - 加载数据
 - (void)loadNewDataFromNet {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
     NSString *client_id = unsplashAppKey;
-    NSString *page = @"2";
+    NSString *page = @"1";
     NSString *per_page = @"20";
     NSDictionary *parm = NSDictionaryOfVariableBindings(client_id,page,per_page);
     
@@ -50,6 +65,7 @@
         for (NSDictionary *dict in responseObject) {
             [imageCount addObject:dict];
         }
+        SDLOG(@"%zd",imageCount.count);
         
         for (int i = 0; i < imageCount.count; i++) {
             HLPhotosModel *model = [HLPhotosModel mj_objectWithKeyValues:responseObject[i][@"urls"]];
@@ -62,6 +78,62 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
+    }];
+    
+}
+
+#pragma mark - 加载更多数据
+- (void)loadMoreOldestData {
+    [self loadMoreData:@"oldest"];
+    
+    [self.tableView.mj_footer beginRefreshing];
+}
+
+- (void)loadMoreNewData {
+    [self loadMoreData:@"popular"];
+    [self.tableView.mj_header beginRefreshing];
+}
+
+- (void)loadMoreData:(NSString *)dataStatus {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    //参数
+   
+    NSString *client_id = unsplashAppKey;
+    NSString *page = [NSString stringWithFormat:@"%zd",++self.pageCount];
+    NSString *per_page = @"10";
+    NSString *order_by = dataStatus;
+    NSDictionary *parm = NSDictionaryOfVariableBindings(client_id,page,per_page,order_by);
+    
+    [manager GET:unsplashPhotoURL parameters:parm progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        [self.tableView.mj_footer endRefreshing];
+        [self.tableView.mj_header endRefreshing];
+        NSMutableArray *imageCount = [NSMutableArray array];
+        for (NSDictionary *dict in responseObject) {
+            [imageCount addObject:dict];
+        }
+        
+        NSMutableArray *newArray = [NSMutableArray array];
+        
+        for (int i = 0; i < imageCount.count; i++) {
+            HLPhotosModel *model = [HLPhotosModel mj_objectWithKeyValues:responseObject[i][@"urls"]];
+            
+            [newArray addObject:model];
+            
+        }
+        
+        if ([order_by isEqualToString:@"popular"]) {
+            [newArray addObjectsFromArray:self.dataArray];
+            self.dataArray = newArray;
+        }else {
+            [self.dataArray addObjectsFromArray:newArray];
+        }
+        
+        [self.tableView reloadData];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        SDLOG(@"%@",error);
     }];
     
 }

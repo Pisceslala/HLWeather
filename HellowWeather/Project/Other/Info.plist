@@ -40,6 +40,10 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>允许访问相册并保存图片</string>
+	<string>是否允许访问相册并保存图片</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>是否允许访问位置信息</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string></string>
 </dict>
 </plist>

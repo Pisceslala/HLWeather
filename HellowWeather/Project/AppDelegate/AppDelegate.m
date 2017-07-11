@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "HLHomeViewController.h"
 #import "HLNavigationController.h"
+#import "HLCoreLocationController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
     
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

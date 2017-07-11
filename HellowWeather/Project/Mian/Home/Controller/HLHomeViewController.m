@@ -17,6 +17,8 @@
 #import "HLDetailViewController.h"
 #import "HLPhotosViewController.h"
 #import "HLCalendarViewController.h"
+#import "HLCoreLocationController.h"
+
 @interface HLHomeViewController ()<HLTopViewDelegate,UIScrollViewDelegate,UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, strong) UIImage *image;
@@ -30,6 +32,8 @@
 @property (nonatomic, strong) HLBottomViewController *bottomVC;
 
 @property (strong, nonatomic) HLCalendarViewController *calendarVC;
+
+@property (strong, nonatomic) HLCoreLocationController *locationVC;
 
 @property (nonatomic, strong) NSString *cityName;
 
@@ -53,11 +57,7 @@
     [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
     // 设置一个空的 shadowImage 来实现
     self.navigationController.navigationBar.shadowImage = [UIImage new];
-    
-    
 
-    //根据城市名称加载
-    [self loadNewDataWithCity:@"广州" andProvince:@"广东省"];
     self.topView.stautsLabel.JYD_Height = 13;
     
     
@@ -76,6 +76,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadDataWithLocation:) name:@"loadDataWithLocation" object:nil];
+    
+    HLCoreLocationController *location = [[HLCoreLocationController alloc] init];
+    self.locationVC = location;
+    [location startShowUserLocation];
+    
     self.isShowCalendar = NO;
     
     self.view.backgroundColor = [UIColor blackColor];
@@ -85,8 +91,16 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStylePlain target:self action:@selector(listBarClick)];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleClickShow)];
+    
     [self.navigationController.navigationBar addGestureRecognizer:tap];
     
+}
+
+- (void)loadDataWithLocation:(NSNotification *)notification {
+    NSDictionary *dict = [notification object];
+    SDLOG(@"%@",dict);
+    //根据城市名称加载
+    [self loadNewDataWithCity:dict[@"city"] andProvince:dict[@"province"]];
 }
 
 - (void)titleClickShow {
@@ -142,7 +156,6 @@
     self.calendarVC = vc;
     [self.scrollView addSubview:vc.view];
     
-
     
 }
 #pragma mark - 加载新数据

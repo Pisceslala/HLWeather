@@ -11,6 +11,9 @@
 		2309BF2D1F14A0FF007CF2E0 /* HLCalenderContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2309BF2C1F14A0FF007CF2E0 /* HLCalenderContentView.m */; };
 		2309BF2F1F14A10C007CF2E0 /* HLCalenderContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2309BF2E1F14A10C007CF2E0 /* HLCalenderContentView.xib */; };
 		2309BF321F14A9E4007CF2E0 /* TimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2309BF311F14A9E4007CF2E0 /* TimeLabel.m */; };
+		2309BF371F14BB38007CF2E0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2309BF361F14BB38007CF2E0 /* MapKit.framework */; };
+		2309BF391F14C20E007CF2E0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2309BF381F14C20E007CF2E0 /* CoreLocation.framework */; };
+		2309BF3C1F14C236007CF2E0 /* HLCoreLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2309BF3B1F14C236007CF2E0 /* HLCoreLocationController.m */; };
 		237F423B1F0CB66D0010A497 /* HLPresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F423A1F0CB66D0010A497 /* HLPresentAnimator.m */; };
 		237F423E1F0CC2D10010A497 /* HLDismissAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F423D1F0CC2D10010A497 /* HLDismissAnimator.m */; };
 		237F42411F0CC9080010A497 /* HLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F42401F0CC9080010A497 /* HLDetailViewController.m */; };
@@ -108,6 +111,10 @@
 		2309BF2E1F14A10C007CF2E0 /* HLCalenderContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLCalenderContentView.xib; sourceTree = "<group>"; };
 		2309BF301F14A9E4007CF2E0 /* TimeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLabel.h; sourceTree = "<group>"; };
 		2309BF311F14A9E4007CF2E0 /* TimeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLabel.m; sourceTree = "<group>"; };
+		2309BF361F14BB38007CF2E0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2309BF381F14C20E007CF2E0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2309BF3A1F14C236007CF2E0 /* HLCoreLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLCoreLocationController.h; sourceTree = "<group>"; };
+		2309BF3B1F14C236007CF2E0 /* HLCoreLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLCoreLocationController.m; sourceTree = "<group>"; };
 		237F42391F0CB66D0010A497 /* HLPresentAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPresentAnimator.h; sourceTree = "<group>"; };
 		237F423A1F0CB66D0010A497 /* HLPresentAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPresentAnimator.m; sourceTree = "<group>"; };
 		237F423C1F0CC2D10010A497 /* HLDismissAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLDismissAnimator.h; sourceTree = "<group>"; };
@@ -253,6 +260,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2309BF391F14C20E007CF2E0 /* CoreLocation.framework in Frameworks */,
+				2309BF371F14BB38007CF2E0 /* MapKit.framework in Frameworks */,
 				ED4257992E9DAB34E62C60BF /* libPods-HellowWeather.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +499,8 @@
 				237F42401F0CC9080010A497 /* HLDetailViewController.m */,
 				23F702241F10E60E008E9A4B /* HLCalendarViewController.h */,
 				23F702251F10E60E008E9A4B /* HLCalendarViewController.m */,
+				2309BF3A1F14C236007CF2E0 /* HLCoreLocationController.h */,
+				2309BF3B1F14C236007CF2E0 /* HLCoreLocationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -805,6 +816,8 @@
 		6CEBD61DAAC39DE35608C5A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2309BF381F14C20E007CF2E0 /* CoreLocation.framework */,
+				2309BF361F14BB38007CF2E0 /* MapKit.framework */,
 				87F2DE5D33FA81EE51283BD2 /* libPods-HellowWeather.a */,
 			);
 			name = Frameworks;
@@ -883,6 +896,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = HMZ598MKR3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					23D0108B1F062398004A2601 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -1048,6 +1066,7 @@
 				239137351F0F733C00BA50AB /* HLPhotoCell.m in Sources */,
 				23D14B751F0A382900C22F8F /* ZFCurveAttribute.m in Sources */,
 				23D14B881F0A382900C22F8F /* ZFPolygon.m in Sources */,
+				2309BF3C1F14C236007CF2E0 /* HLCoreLocationController.m in Sources */,
 				23D14B7E1F0A382900C22F8F /* ZFGenericChart.m in Sources */,
 				23D010C41F063341004A2601 /* HLConst.m in Sources */,
 				23D010C81F063845004A2601 /* HLTopView.m in Sources */,

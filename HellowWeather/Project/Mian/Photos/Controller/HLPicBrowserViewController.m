@@ -11,12 +11,24 @@
 #import "UIImage+HLUIImage.h"
 @interface HLPicBrowserViewController ()
 
+/**
+ imageView
+ */
 @property (strong, nonatomic) UIImageView *imageV;
 
+/**
+ 滑动
+ */
 @property (strong, nonatomic) UIScrollView *scrollView;
 
+/**
+ 原始尺寸
+ */
 @property (assign, nonatomic) CGSize orinSize;
 
+/**
+ 是否缩放
+ */
 @property (assign, nonatomic) BOOL isScale;
 
 @end

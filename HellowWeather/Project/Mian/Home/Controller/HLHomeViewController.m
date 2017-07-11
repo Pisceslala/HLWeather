@@ -104,7 +104,7 @@
             self.calendarVC.view.JYD_Height = 0;
             self.calendarVC.view.subviews[0].JYD_Height = 0;
         } completion:^(BOOL finished) {
-            //[self.calendarVC.view removeFromSuperview];
+            
         }];
         
     }

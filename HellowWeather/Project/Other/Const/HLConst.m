@@ -41,4 +41,4 @@ NSString * const PhotoCache = @"PhotoCache";
 
 
 //万年历URL
-NSString * const calendarURL = @"http://apicloud.mob.com/appstore/calendar/day";
+NSString * const calendarURL = @"appstore/calendar/day";

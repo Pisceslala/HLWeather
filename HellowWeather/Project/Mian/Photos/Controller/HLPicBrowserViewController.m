@@ -36,7 +36,7 @@
     [self configGestureRecognizer];
     
     
-    self.isScale = NO;
+    self.isScale = YES;
 }
 
 //点击缩放图片
@@ -107,11 +107,12 @@
         imageV.backgroundColor = [UIColor lightGrayColor];
         imageV.contentMode = UIViewContentModeScaleAspectFill;
         [imageV sd_setImageWithURL:[NSURL URLWithString:self.regularURL] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            UIImage *newImage = [[UIImage alloc] imageCompressForWidthScale:image targetWidth:SSScreenW];
             imageV.JYD_X = 0;
-            imageV.JYD_Y = 0;
-            imageV.JYD_Size = image.size;
+            imageV.JYD_Size = newImage.size;
+            imageV.JYD_Y = SSScreenH / 2 - (imageV.JYD_Height / 2);
             self.orinSize = image.size;
-            self.scrollView.contentSize = image.size;
+            self.scrollView.contentSize = newImage.size;
         }];
 
         _imageV = imageV;

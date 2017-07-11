@@ -29,6 +29,8 @@
 
 @property (nonatomic, strong) HLBottomViewController *bottomVC;
 
+@property (strong, nonatomic) HLCalendarViewController *calendarVC;
+
 @property (nonatomic, strong) NSString *cityName;
 
 @property (nonatomic, strong) NSString *provinceName;
@@ -36,6 +38,8 @@
 @property (strong, nonatomic) UIScrollView *scrollView;
 
 @property (strong, nonatomic) UIImageView *dragView;
+
+@property (assign, nonatomic) BOOL isShowCalendar;
 
 
 @end
@@ -72,7 +76,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.isShowCalendar = NO;
     
     self.view.backgroundColor = [UIColor blackColor];
     
@@ -86,11 +90,29 @@
 }
 
 - (void)titleClickShow {
-    HLCalendarViewController *vc = [[HLCalendarViewController alloc] init];
-    vc.view.JYD_X = 0;
-    vc.view.JYD_Y = CGRectGetMaxY(self.topView.frame);
-    vc.view.JYD_Width = SSScreenW;
-    vc.view.JYD_Height = 240;
+    self.isShowCalendar = !self.isShowCalendar;
+    
+    
+    
+    if (self.isShowCalendar) {
+        HLCalendarViewController *vc = [[HLCalendarViewController alloc] init];
+        vc.view.frame = CGRectMake(0, CGRectGetMaxY(self.topView.frame), SSScreenW, 0);
+        vc.view.backgroundColor = [UIColor clearColor];
+        self.calendarVC = vc;
+        [self.scrollView addSubview:vc.view];
+        [UIView animateWithDuration:0.2 animations:^{
+            self.calendarVC.view.JYD_Height = 240;
+        }];
+    }else {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.calendarVC.view.JYD_Height = 0;
+            self.calendarVC.view.subviews[0].JYD_Height = 0;
+        } completion:^(BOOL finished) {
+            [self.calendarVC.view removeFromSuperview];
+        }];
+        
+    }
+    
 }
 
 - (void)setupViews {
@@ -104,7 +126,7 @@
     HLTopView *topView = [HLTopView showTopView];
     self.topView = topView;
     self.topView.delegate = self;
-    topView.frame = CGRectMake(0, 0, SSScreenW, SSScreenH - 100);
+    topView.frame = CGRectMake(0, 0, SSScreenW, SSScreenH - 340);
     [self.scrollView addSubview:topView];
     
     //获取当天日期
@@ -149,12 +171,9 @@
         HLBottomViewController *bottomVC = [[HLBottomViewController alloc] init];
         bottomVC.cityName = city;
         self.bottomVC = bottomVC;
-        bottomVC.view.frame = CGRectMake(0, CGRectGetMaxY(self.topView.frame), SSScreenW, 100);
+        bottomVC.view.frame = CGRectMake(0, CGRectGetMaxY(self.topView.frame) + 240, SSScreenW, 100);
         [self.scrollView addSubview:bottomVC.view];
-        bottomVC.view.alpha = 1;
-        
-        
-        
+
         for (HLWeatherModel *weatherModel in self.dataArray) {
             self.topView.model = weatherModel;
         }

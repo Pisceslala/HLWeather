@@ -25,6 +25,7 @@
 //分类
 #import "NSDate+DateExtension.h"
 #import "UIView+JYDFrame.h"
+#import "UILabel+HLLabel.h"
 #import "UINavigationBar+Awesome.h"
 #endif /* HLPrefixHeader_pch */
 

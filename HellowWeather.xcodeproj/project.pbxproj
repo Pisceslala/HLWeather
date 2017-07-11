@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2309BF231F149C2D007CF2E0 /* UILabel+HLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2309BF221F149C2D007CF2E0 /* UILabel+HLLabel.m */; };
+		2309BF2D1F14A0FF007CF2E0 /* HLCalenderContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2309BF2C1F14A0FF007CF2E0 /* HLCalenderContentView.m */; };
+		2309BF2F1F14A10C007CF2E0 /* HLCalenderContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2309BF2E1F14A10C007CF2E0 /* HLCalenderContentView.xib */; };
+		2309BF321F14A9E4007CF2E0 /* TimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2309BF311F14A9E4007CF2E0 /* TimeLabel.m */; };
 		237F423B1F0CB66D0010A497 /* HLPresentAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F423A1F0CB66D0010A497 /* HLPresentAnimator.m */; };
 		237F423E1F0CC2D10010A497 /* HLDismissAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F423D1F0CC2D10010A497 /* HLDismissAnimator.m */; };
 		237F42411F0CC9080010A497 /* HLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F42401F0CC9080010A497 /* HLDetailViewController.m */; };
@@ -97,6 +101,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2309BF211F149C2D007CF2E0 /* UILabel+HLLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HLLabel.h"; sourceTree = "<group>"; };
+		2309BF221F149C2D007CF2E0 /* UILabel+HLLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HLLabel.m"; sourceTree = "<group>"; };
+		2309BF2B1F14A0FF007CF2E0 /* HLCalenderContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLCalenderContentView.h; sourceTree = "<group>"; };
+		2309BF2C1F14A0FF007CF2E0 /* HLCalenderContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLCalenderContentView.m; sourceTree = "<group>"; };
+		2309BF2E1F14A10C007CF2E0 /* HLCalenderContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLCalenderContentView.xib; sourceTree = "<group>"; };
+		2309BF301F14A9E4007CF2E0 /* TimeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLabel.h; sourceTree = "<group>"; };
+		2309BF311F14A9E4007CF2E0 /* TimeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLabel.m; sourceTree = "<group>"; };
 		237F42391F0CB66D0010A497 /* HLPresentAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLPresentAnimator.h; sourceTree = "<group>"; };
 		237F423A1F0CB66D0010A497 /* HLPresentAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLPresentAnimator.m; sourceTree = "<group>"; };
 		237F423C1F0CC2D10010A497 /* HLDismissAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLDismissAnimator.h; sourceTree = "<group>"; };
@@ -263,6 +274,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2309BF271F14A08B007CF2E0 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				2309BF2B1F14A0FF007CF2E0 /* HLCalenderContentView.h */,
+				2309BF2C1F14A0FF007CF2E0 /* HLCalenderContentView.m */,
+				2309BF2E1F14A10C007CF2E0 /* HLCalenderContentView.xib */,
+				2309BF301F14A9E4007CF2E0 /* TimeLabel.h */,
+				2309BF311F14A9E4007CF2E0 /* TimeLabel.m */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
 		237F42381F0CB6430010A497 /* Animator */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +511,7 @@
 				237F42421F0CD2F30010A497 /* CellView */,
 				2398D4E81F073EB600D7437C /* BottomView */,
 				23D010C51F06382E004A2601 /* topView */,
+				2309BF271F14A08B007CF2E0 /* CalendarView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -542,6 +566,8 @@
 				23D14B061F09DDD600C22F8F /* UINavigationBar+Awesome.m */,
 				23F702191F10CD75008E9A4B /* UIImage+HLUIImage.h */,
 				23F7021A1F10CD75008E9A4B /* UIImage+HLUIImage.m */,
+				2309BF211F149C2D007CF2E0 /* UILabel+HLLabel.h */,
+				2309BF221F149C2D007CF2E0 /* UILabel+HLLabel.m */,
 			);
 			path = Gatecory;
 			sourceTree = "<group>";
@@ -897,6 +923,7 @@
 			files = (
 				23D010B21F062470004A2601 /* Info.plist in Resources */,
 				23D010861F062398004A2601 /* LaunchScreen.storyboard in Resources */,
+				2309BF2F1F14A10C007CF2E0 /* HLCalenderContentView.xib in Resources */,
 				239137361F0F733C00BA50AB /* HLPhotoCell.xib in Resources */,
 				237F42471F0CD3250010A497 /* HLDetailCell.xib in Resources */,
 				23D010831F062398004A2601 /* Assets.xcassets in Resources */,
@@ -987,9 +1014,11 @@
 				23D14B781F0A382900C22F8F /* ZFMethod.m in Sources */,
 				23D14B811F0A382900C22F8F /* ZFHorizontalBarChart.m in Sources */,
 				23D14B791F0A382900C22F8F /* ZFBar.m in Sources */,
+				2309BF321F14A9E4007CF2E0 /* TimeLabel.m in Sources */,
 				23D14B7B1F0A382900C22F8F /* ZFCirque.m in Sources */,
 				23D14B6E1F0A382900C22F8F /* UIBezierPath+Zirkfied.m in Sources */,
 				23F702291F10E630008E9A4B /* HLCalendarModel.m in Sources */,
+				2309BF2D1F14A0FF007CF2E0 /* HLCalenderContentView.m in Sources */,
 				23D14B7F1F0A382900C22F8F /* ZFHorizontalAxis.m in Sources */,
 				23D14B711F0A382900C22F8F /* ZFLabel.m in Sources */,
 				23D14B111F09ECB100C22F8F /* NSDate+DateExtension.m in Sources */,
@@ -1001,6 +1030,7 @@
 				23D14B701F0A382900C22F8F /* UIView+Zirkfied.m in Sources */,
 				23D14B8B1F0A382900C22F8F /* ZFWave.m in Sources */,
 				2398D4EE1F073F0500D7437C /* HLBottomViewController.m in Sources */,
+				2309BF231F149C2D007CF2E0 /* UILabel+HLLabel.m in Sources */,
 				237F42411F0CC9080010A497 /* HLDetailViewController.m in Sources */,
 				23D010811F062398004A2601 /* HellowWeather.xcdatamodeld in Sources */,
 				237F423E1F0CC2D10010A497 /* HLDismissAnimator.m in Sources */,

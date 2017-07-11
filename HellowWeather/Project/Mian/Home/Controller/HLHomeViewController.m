@@ -95,20 +95,16 @@
     
     
     if (self.isShowCalendar) {
-        HLCalendarViewController *vc = [[HLCalendarViewController alloc] init];
-        vc.view.frame = CGRectMake(0, CGRectGetMaxY(self.topView.frame), SSScreenW, 0);
-        vc.view.backgroundColor = [UIColor clearColor];
-        self.calendarVC = vc;
-        [self.scrollView addSubview:vc.view];
+        
         [UIView animateWithDuration:0.2 animations:^{
-            self.calendarVC.view.JYD_Height = 240;
+            self.calendarVC.view.JYD_Height = 230;
         }];
     }else {
         [UIView animateWithDuration:0.2 animations:^{
             self.calendarVC.view.JYD_Height = 0;
             self.calendarVC.view.subviews[0].JYD_Height = 0;
         } completion:^(BOOL finished) {
-            [self.calendarVC.view removeFromSuperview];
+            //[self.calendarVC.view removeFromSuperview];
         }];
         
     }
@@ -140,6 +136,11 @@
     
     //上下拉控件
     [self setupDragView];
+    
+    HLCalendarViewController *vc = [[HLCalendarViewController alloc] init];
+    vc.view.frame = CGRectMake(5, CGRectGetMaxY(self.topView.frame), SSScreenW - 10, 0);
+    self.calendarVC = vc;
+    [self.scrollView addSubview:vc.view];
     
 
     
@@ -197,6 +198,7 @@
 
 #pragma mark - topViewDelegate
 - (void)didClickAirFaceBookInTopView {
+    
     HLPhotosViewController *photoVC = [[HLPhotosViewController alloc] init];
     
     [self.navigationController pushViewController:photoVC animated:YES];

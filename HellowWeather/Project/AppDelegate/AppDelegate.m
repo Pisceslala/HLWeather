@@ -10,6 +10,7 @@
 #import "HLHomeViewController.h"
 #import "HLNavigationController.h"
 #import "HLCoreLocationController.h"
+#import <Bugly/Bugly.h>
 @interface AppDelegate ()
 
 @end
@@ -20,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    
+    [Bugly startWithAppId:@"ec89408ab0"];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     HLHomeViewController *homeVC = [[HLHomeViewController alloc] init];

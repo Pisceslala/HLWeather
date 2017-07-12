@@ -18,6 +18,8 @@
     [super viewWillAppear:animated];
     
     [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],
+                                                                      NSFontAttributeName:[UIFont systemFontOfSize:20]}];
 }
 
 - (void)viewDidLoad {

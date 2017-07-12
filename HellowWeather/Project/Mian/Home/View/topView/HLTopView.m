@@ -7,7 +7,6 @@
 //
 
 #import "HLTopView.h"
-
 @interface HLTopView ()
 
 
@@ -101,6 +100,7 @@
 - (void)hideStatusLabel {
     [UIView animateWithDuration:0.5 animations:^{
         self.stautsLabel.JYD_Height = 0;
+        self.stautsLabel.hidden = YES;
     }];
 }
 

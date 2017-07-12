@@ -46,11 +46,13 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 
 {
-    //系统会一直更新数据，直到选择停止更新，因为我们只需要获得一次经纬度即可，所以获取之后就停止更新
-    [self.locationManager stopUpdatingLocation];
+    
     //此处locations存储了持续更新的位置坐标值，取最后一个值为最新位置，如果不想让其持续更新位置，则在此方法中获取到一个值之后让locationManager stopUpdatingLocation
     CLLocation *currentLocation = [locations lastObject];
     [self.locationManager stopUpdatingLocation];
+    
+    NSTimeInterval locationAge = -[currentLocation.timestamp timeIntervalSinceNow];
+    if (locationAge > 5.0) return;
     
     //获取当前所在的城市名
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
@@ -69,6 +71,8 @@
          [[PINCache sharedCache] setObject:currCity forKey:CITYNAME];
          [[PINCache sharedCache] setObject:province forKey:PROVINCE];
      }];
+    
+    
     
 }
 

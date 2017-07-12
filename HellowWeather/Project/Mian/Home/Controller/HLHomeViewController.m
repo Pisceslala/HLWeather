@@ -60,7 +60,7 @@
     // 设置一个空的 shadowImage 来实现
     self.navigationController.navigationBar.shadowImage = [UIImage new];
 
-    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:20]}];
     //[self loadNewDataWithCity:@"广州" andProvince:@"广东省"];
     
     self.topView.stautsLabel.JYD_Height = 13;
@@ -163,9 +163,17 @@
     [self.scrollView addSubview:vc.view];
     
     
+    
 }
 #pragma mark - 加载新数据
 - (void)loadNewDataWithCity:(NSString *)cityName andProvince:(NSString *)provinceName{
+    
+    self.topView.statusAct.hidden = NO;
+    self.topView.stautsLabel.hidden = NO;
+    self.topView.stautsLabel.text = @"更新数据";
+    self.topView.stautsLabel.textAlignment = NSTextAlignmentCenter;
+    [self.topView.statusAct startAnimating];
+
     
     self.cityName = cityName;
     self.provinceName = provinceName;
@@ -175,11 +183,6 @@
     NSString *province = provinceName;
     
     NSDictionary *parameters = NSDictionaryOfVariableBindings(province,key,city);
-    
-    self.topView.statusAct.hidden = NO;
-    self.topView.stautsLabel.text = @"更新数据";
-    self.topView.stautsLabel.textAlignment = NSTextAlignmentCenter;
-    [self.topView.statusAct startAnimating];
     
     [[HLNetTool shareTools] GET:query parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
@@ -198,7 +201,7 @@
             self.topView.model = weatherModel;
         }
         
-        
+
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@",error);

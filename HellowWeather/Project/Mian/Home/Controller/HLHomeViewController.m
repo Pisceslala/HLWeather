@@ -18,6 +18,7 @@
 #import "HLPhotosViewController.h"
 #import "HLCalendarViewController.h"
 #import "HLCoreLocationController.h"
+#import "HLSettingViewController.h"
 
 @interface HLHomeViewController ()<HLTopViewDelegate,UIScrollViewDelegate,UIViewControllerTransitioningDelegate>
 
@@ -35,6 +36,8 @@
 
 @property (strong, nonatomic) HLCoreLocationController *locationVC;
 
+@property (strong, nonatomic) HLSettingViewController *settingVC;
+
 @property (nonatomic, strong) NSString *cityName;
 
 @property (nonatomic, strong) NSString *provinceName;
@@ -44,7 +47,6 @@
 @property (strong, nonatomic) UIImageView *dragView;
 
 @property (assign, nonatomic) BOOL isShowCalendar;
-
 
 @end
 
@@ -58,6 +60,9 @@
     // 设置一个空的 shadowImage 来实现
     self.navigationController.navigationBar.shadowImage = [UIImage new];
 
+    
+    //[self loadNewDataWithCity:@"广州" andProvince:@"广东省"];
+    
     self.topView.stautsLabel.JYD_Height = 13;
     
     
@@ -89,6 +94,7 @@
     [self setupViews];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStylePlain target:self action:@selector(listBarClick)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"setting"] style:UIBarButtonItemStylePlain target:self action:@selector(settingBarClick)];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleClickShow)];
     
@@ -100,7 +106,7 @@
     NSDictionary *dict = [notification object];
     SDLOG(@"%@",dict);
     //根据城市名称加载
-    [self loadNewDataWithCity:dict[@"city"] andProvince:dict[@"province"]];
+    [self loadNewDataWithCity:dict[@"currCity"] andProvince:dict[@"province"]];
 }
 
 - (void)titleClickShow {
@@ -209,6 +215,12 @@
     
 }
 
+- (void)settingBarClick {
+    HLSettingViewController *vc = [[HLSettingViewController alloc] init];
+    vc.title = @"设置";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark - topViewDelegate
 - (void)didClickAirFaceBookInTopView {
     
@@ -216,13 +228,15 @@
     
     [self.navigationController pushViewController:photoVC animated:YES];
     
-    [self.bottomVC.view removeFromSuperview];
+    //[self.bottomVC.view removeFromSuperview];
 
     
 }
 
 - (void)didClickTempLabelInTopView {
-    [self loadNewDataWithCity:@"广州" andProvince:@"广东省"];
+    NSString *city = [[PINCache sharedCache] objectForKey:CITYNAME];
+    NSString *province = [[PINCache sharedCache] objectForKey:PROVINCE];
+    [self loadNewDataWithCity:city andProvince:province];
     [self.bottomVC.view removeFromSuperview];
 }
 

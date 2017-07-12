@@ -42,3 +42,7 @@ NSString * const PhotoCache = @"PhotoCache";
 
 //万年历URL
 NSString * const calendarURL = @"appstore/calendar/day";
+
+
+NSString * const CITYNAME = @"CITYNAME";
+NSString * const PROVINCE = @"PROVINCE";

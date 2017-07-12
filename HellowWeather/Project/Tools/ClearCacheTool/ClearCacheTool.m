@@ -11,6 +11,15 @@
 //#define cachePath
 @implementation ClearCacheTool
 
++ (instancetype)shareClearCacheTools {
+    static ClearCacheTool *tool = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        tool = [[ClearCacheTool alloc] init];
+    });
+    return tool;
+}
+
 -(CGFloat)getCacheTotalSize {
     
     NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
@@ -47,14 +56,21 @@
         NSArray *childerFiles=[fileManager subpathsAtPath:cachePath];
         for (NSString *fileName in childerFiles) {
             //如有需要，加入条件，过滤掉不想删除的文件
-            
+            if ([fileName isEqualToString:@"com.pinterest.PINDiskCache.PINCacheShared"] ||
+                [fileName isEqualToString:@"com.pinterest.PINDiskCache.PINCacheShared/CITYNAME"] ||
+                [fileName isEqualToString:@"com.pinterest.PINDiskCache.PINCacheShared/PROVINCE"] ||
+                [fileName isEqualToString:@"com.pinterest.PINDiskCache.PINCacheShared/PhotoCache"] ||
+                [fileName isEqualToString:@"com.pinterest.PINDiskCache.PINCacheShared/newCount"] ||
+                [fileName isEqualToString:@"com.pinterest.PINDiskCache.PINCacheShared/oldCount"]) {
+                continue;
+            }
             NSString *absolutePath=[cachePath stringByAppendingPathComponent:fileName];
-            
             [fileManager removeItemAtPath:absolutePath error:nil];
         }
     }
-    //[[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
-    //[[SDImageCache sharedImageCache] clearMemory];
+    
+    [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
+    [[SDImageCache sharedImageCache] clearMemory];
 }
 
 

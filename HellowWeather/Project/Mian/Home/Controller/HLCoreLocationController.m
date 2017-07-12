@@ -12,53 +12,64 @@
 
 @property(readonly, nonatomic) CLLocationCoordinate2D coordinate;
 
-@property (strong, nonatomic) CLLocationManager *mgr;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
 @implementation HLCoreLocationController
 
 
-- (void)startShowUserLocation {
-    CLLocationManager *manager = [[CLLocationManager alloc] init];
-    manager.delegate = self;
-    self.mgr = manager;
-    self.mgr.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-    self.mgr.distanceFilter = 500;
+//开始定位
+-(void)startShowUserLocation{
+    //判断定位操作是否被允许
     
-    if([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
-    {
-        // 主动要求用户对我们的程序授权, 授权状态改变就会通知代理
-        //
-        [self.mgr requestAlwaysAuthorization]; // 请求前台和后台定位权限
+    if([CLLocationManager locationServicesEnabled]) {
+        self.locationManager = [[CLLocationManager alloc] init] ;
+        self.locationManager.delegate = self;
+        //设置定位精度
+        self.locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+        self.locationManager.distanceFilter = kCLLocationAccuracyHundredMeters;//每隔多少米定位一次（这里的设置为每隔百米)
+        if ([[[UIDevice currentDevice] systemVersion]floatValue]>=8.0) {
+            //使用应用程序期间允许访问位置数据
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        // 开始定位
+        [self.locationManager startUpdatingLocation];
+    }else {
+        //提示用户无法进行定位操作
+        NSLog(@"%@",@"定位服务当前可能尚未打开，请设置打开！");
         
     }
-    
-    [manager startUpdatingLocation];
 }
+#pragma mark - CoreLocation Delegate
 
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+{
+    //系统会一直更新数据，直到选择停止更新，因为我们只需要获得一次经纬度即可，所以获取之后就停止更新
+    [self.locationManager stopUpdatingLocation];
+    //此处locations存储了持续更新的位置坐标值，取最后一个值为最新位置，如果不想让其持续更新位置，则在此方法中获取到一个值之后让locationManager stopUpdatingLocation
+    CLLocation *currentLocation = [locations lastObject];
+    [self.locationManager stopUpdatingLocation];
     
-    [manager stopUpdatingLocation];
+    //获取当前所在的城市名
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    //根据经纬度反向地理编译出地址信息
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *array, NSError *error)
+     {
+         CLPlacemark *placemark = [array objectAtIndex:0];
+             //获取城市
+         NSString *currCity = [placemark.locality substringToIndex:2];
+         NSString *province = placemark.administrativeArea;
+         SDLOG(@"%@-%@",currCity,province);
+         NSDictionary *dict = NSDictionaryOfVariableBindings(currCity,province);
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"loadDataWithLocation" object:dict];
+         
+         //缓存
+         [[PINCache sharedCache] setObject:currCity forKey:CITYNAME];
+         [[PINCache sharedCache] setObject:province forKey:PROVINCE];
+     }];
     
-    CLLocation *newLocation = [locations lastObject];
-    
-    SDLOG(@"%zd",locations.count);
-    
-    //初始化编码器
-    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
-    
-    [geoCoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        CLPlacemark *mark = [placemarks lastObject];
-        //获取当前城市位置信息，其中CLPlacemark包括name、thoroughfare、subThoroughfare、locality、subLocality等详细信息
-        //[self.annotationView setValue:mark.name forKey:@"title"];
-        NSString *province = mark.administrativeArea;
-        NSString *city = [mark.locality substringToIndex:2];
-        NSDictionary *dict = NSDictionaryOfVariableBindings(city,province);
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"loadDataWithLocation" object:dict];
-    }];
-
 }
 
 

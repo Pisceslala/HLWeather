@@ -11,6 +11,13 @@
 @interface ClearCacheTool : NSObject
 
 /**
+ 单例
+
+ @return ClearCache
+ */
++ (instancetype)shareClearCacheTools;
+
+/**
  获取缓存大小
 
  @return 缓存大小

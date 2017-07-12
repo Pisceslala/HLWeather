@@ -36,4 +36,8 @@ UIKIT_EXTERN NSString * const unsplashPhotoCallBackURL;
 UIKIT_EXTERN NSString * const PhotoCache;
 
 UIKIT_EXTERN NSString * const calendarURL;
+
+//城市名缓存
+UIKIT_EXTERN NSString * const CITYNAME;
+UIKIT_EXTERN NSString * const PROVINCE;
 @end
